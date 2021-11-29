@@ -1,6 +1,6 @@
 class Item < ApplicationRecord
   belongs_to :user
-  has_one :calculation dependent: :destroy
+  has_one :calculation, dependent: :destroy
 
   validates :name, presence: true
   validates :degree, presence: true
