@@ -1,5 +1,5 @@
 class Item < ApplicationRecord
-  #belongs_to :user
+  belongs_to :user
 
   validates :name, presence: true
   validates :degree, presence: true
