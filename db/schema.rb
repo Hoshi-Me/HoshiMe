@@ -10,10 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_28_123003) do
+ActiveRecord::Schema.define(version: 2021_11_29_055256) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "calculations", force: :cascade do |t|
+    t.bigint "item_id", null: false
+    t.float "degree_value", null: false
+    t.float "start_value", null: false
+    t.float "finish_value", null: false
+    t.float "price_value", null: false
+    t.float "sum", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["item_id"], name: "index_calculations_on_item_id"
+  end
 
   create_table "items", force: :cascade do |t|
     t.string "name", null: false
@@ -36,4 +48,5 @@ ActiveRecord::Schema.define(version: 2021_11_28_123003) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "calculations", "items"
 end
