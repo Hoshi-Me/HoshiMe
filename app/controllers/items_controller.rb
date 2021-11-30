@@ -4,12 +4,15 @@ class ItemsController < ApplicationController
   end
 
   def new
-    @item = Item.new
+    #@item = Item.new
+    @form = Form::ItemCollection.new
   end
 
   def create
-    @item = Item.new(item_params)
-    if @item.save
+    #@item = Item.new(item_params)
+    @form = Form::ItemCollection.new(item_collection_params)
+    #if @item.save
+    if @form.save
       redirect_to items_path
     else
       render :new
@@ -20,5 +23,9 @@ class ItemsController < ApplicationController
 
   def item_params
     params.require(:item).permit(:name, :degree, :start_date, :finish_date, :price)
+  end
+
+  def item_collection_params
+    params.require(:form_item_collection).permit(items_attributes: [:name, :degree, :start_date, :finish_date, :price])
   end
 end
