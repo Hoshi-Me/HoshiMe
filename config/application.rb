@@ -40,7 +40,6 @@ module HoshiMe
       g.assets false
       g.helper false
       g.test_framework false
-      g.template_engine false
     end
   end
 end
