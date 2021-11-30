@@ -4,7 +4,7 @@ class Form::ItemCollection < Form::Base
 
   def initialize(attributes = {})
     super attributes
-    self.items = FORM_COUNT.times.map { Item.new() } unless self.items.present?
+    self.items = FORM_COUNT.times.map { Item.new } unless items.present?
   end
 
   def items_attributes=(attributes)
@@ -14,10 +14,10 @@ class Form::ItemCollection < Form::Base
   def save
     # 3件全て保存できた場合のみ実行する
     Item.transaction do
-      self.items.map(&:save!)
+      items.map(&:save!)
     end
-      return true
-    rescue => e
-      return false
+    true
+  rescue StandardError
+    p 'error'
   end
 end
