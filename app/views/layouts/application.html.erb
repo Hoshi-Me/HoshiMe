@@ -10,7 +10,15 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="flex flex-col min-h-screen">
+    <% if logged_in? %>
+      <%= render "shared/header" %>
+    <% else %>
+      <%= render "shared/before_login_header" %>
+    <% end %>
+    <main class="flex-grow">
+      <%= yield %>
+    </main>
+    <%= render 'shared/footer' %>
   </body>
 </html>
