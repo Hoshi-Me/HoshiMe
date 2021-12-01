@@ -17,7 +17,8 @@ class Form::ItemCollection < Form::Base
       items.map(&:save!)
     end
     true
-  rescue StandardError
-    p 'error'
+  rescue StandardError => e
+    p e
+    false
   end
 end
