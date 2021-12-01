@@ -2,6 +2,7 @@
 
 <%= form_with model: @form, url: items_path, local: true do |form| %>
   <%= form.fields_for :items do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
     <%= f.label :name %>
     <%= f.text_field :name %>
     <%= f.label :degree %>
