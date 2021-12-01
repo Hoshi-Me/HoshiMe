@@ -1,8 +1,9 @@
 ja:
   defaults:
     login: ログイン
-    submit: 登録
+    register: 新規登録
     logout: ログアウト
+    mypage: マイページ
   items:
     new:
       title: アイテム登録
