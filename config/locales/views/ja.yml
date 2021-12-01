@@ -1,0 +1,13 @@
+ja:
+  defaults:
+    login: ログイン
+    submit: 登録
+    logout: ログアウト
+  items:
+    new:
+      title: アイテム登録
+    create:
+      success: アイテムを登録しました
+      fail: アイテムの登録に失敗しました
+  users:
+  user_sessions:
