@@ -15,9 +15,6 @@ class ItemsController < ApplicationController
     @form = Form::ItemCollection.new(item_collection_params)
     # if @item.save
     if @form.save
-      @form.items.each do |item|
-        item.calculation
-      end
       redirect_to items_path
     else
       render :new
