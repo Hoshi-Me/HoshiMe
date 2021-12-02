@@ -10,7 +10,6 @@ class Item < ApplicationRecord
 
   # item保存後に計算してcalculationに保存
   def calculation
-    binding.pry
     calculate_item = self
     calculate = calculate_item.build_calculation
     calculate.degree_value = calculate_degree(calculate_item.degree)
