@@ -1,5 +1,5 @@
 class CalculationsController < ApplicationController
   def index
-    @calculations = Calculation.all.order(sum: :desc)
+    @calculations = Calculation.all.includes(:item).order(sum: :desc)
   end
 end
