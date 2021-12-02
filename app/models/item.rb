@@ -8,7 +8,6 @@ class Item < ApplicationRecord
   validates :finish_date, presence: true
   validates :price, presence: true
 
-  # item保存後に計算してcalculationに保存
   def calculation
     calculate_item = self
     calculate = calculate_item.build_calculation
@@ -16,16 +15,8 @@ class Item < ApplicationRecord
     calculate.start_value = calculate_start(calculate_item.start_date)
     calculate.finish_value = calculate_finish(calculate_item.finish_date)
     calculate.price_value = calculate_price(calculate_item.price)
-
-    # それぞれの計算値の合計
     calculate.sum = calculate.degree_value + calculate.start_value + calculate.finish_value + calculate.price_value
-
-    # 保存できる前提でsave!、万が一の時のために例外処理をする（後で実装）
-    begin
-      calculate.save!
-    rescue StandardError => e
-      puts e
-    end
+    calculate.save!
   end
 
   def calculate_degree(data)
