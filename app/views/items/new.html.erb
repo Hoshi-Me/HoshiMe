@@ -1,6 +1,6 @@
-<h1 class="text-red-500 text-5xl">欲しいもの登録ページ</h1>
-
+<h1><%= t('.title') %></h1>
 <%= form_with model: @item, local: true do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
   <%= f.label :name, '欲しいもの' %>
   <%= f.text_field :name %>
   <%= f.label :degree, '欲しい度' %>

@@ -15,6 +15,7 @@ class ItemsController < ApplicationController
       @item.calculation
       redirect_to calculations_path
     else
+      flash.now[:danger] = t('.fail')
       render :new
     end
   end
