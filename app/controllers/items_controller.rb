@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+  before_action :get_item, only: %i[edit update]
+
   def index
     @items = Item.all
   end
@@ -13,14 +15,32 @@ class ItemsController < ApplicationController
     @form = Form::ItemCollection.new(item_collection_params)
     # if @item.save
     if @form.save
-      redirect_to items_path, success: t('.success')
+      redirect_to calculations_path, success: t('.success')
     else
       flash.now[:danger] = t('.fail')
       render :new
     end
   end
 
+  def edit; end
+
+  def update
+    if @item.update(item_params)
+      redirect_to confirm_items_path
+    else
+      render :edit
+    end
+  end
+
+  def confirm
+    @items = Item.all.order(created_at: :asc)
+  end
+
   private
+
+  def get_item
+    @item = Item.find(params[:id])
+  end
 
   def item_params
     params.require(:item).permit(:name, :degree, :start_date, :finish_date, :price)

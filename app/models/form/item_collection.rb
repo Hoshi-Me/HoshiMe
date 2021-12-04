@@ -15,9 +15,11 @@ class Form::ItemCollection < Form::Base
     # 3件全て保存できた場合のみ実行する
     Item.transaction do
       items.map(&:save!)
+      items.map(&:calculation)
     end
     true
-  rescue StandardError
-    p 'error'
+  rescue StandardError => e
+    p e
+    false
   end
 end
