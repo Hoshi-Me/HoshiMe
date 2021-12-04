@@ -17,3 +17,9 @@ ja:
       success: ユーザを登録しました
       fail: ユーザの登録に失敗しました
   user_sessions:
+    new:
+      title: ログイン
+    create:
+      success: ログインしました
+    destroy:
+      success: ログアウトしました
