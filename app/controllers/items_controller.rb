@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :get_item, only: %i[edit update]
+  before_action :get_item, only: %i[edit update destroy]
 
   def index
     @items = Item.all
@@ -23,10 +23,16 @@ class ItemsController < ApplicationController
 
   def update
     if @item.update(item_params)
-      redirect_to confirm_items_path
+      @item.calculation
+      redirect_to items_path
     else
       render :edit
     end
+  end
+
+  def destroy
+    @item.destroy
+    redirect_to items_path
   end
 
   def confirm
