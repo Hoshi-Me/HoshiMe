@@ -12,11 +12,11 @@ ja:
       fail: アイテムの登録に失敗しました
   users:
     new:
-      title: ユーザ登録
+      title: 新規登録
     create:
       success: ユーザを登録しました
       fail: ユーザの登録に失敗しました
-  user_sessions:
+  sessions:
     new:
       title: ログイン
     create:
