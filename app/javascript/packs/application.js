@@ -9,6 +9,7 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import "../src/application.scss"
 require('jquery')
+require('chart.js')
 
 Rails.start()
 Turbolinks.start()
