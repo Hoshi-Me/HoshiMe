@@ -13,7 +13,7 @@ class ItemsController < ApplicationController
     @item = Item.new(item_params)
     if @item.save
       @item.calculation
-      redirect_to calculations_path
+      redirect_to items_path, success: t('.success')
     else
       flash.now[:danger] = t('.fail')
       render :new
@@ -25,15 +25,16 @@ class ItemsController < ApplicationController
   def update
     if @item.update(item_params)
       @item.calculation
-      redirect_to items_path
+      redirect_to items_path, success: t('.success')
     else
+      flash.now[:danger] = t('.fail')
       render :edit
     end
   end
 
   def destroy
     @item.destroy
-    redirect_to items_path
+    redirect_to items_path, success: t('.success')
   end
 
   def confirm

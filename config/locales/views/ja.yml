@@ -10,5 +10,16 @@ ja:
     create:
       success: アイテムを登録しました
       fail: アイテムの登録に失敗しました
+    update:
+      success: アイテムの情報を更新しました
+      fail: アイテムの更新に失敗しました
+    destroy:
+      success: アイテムを削除しました
+  three_items:
+    new:
+      title: アイテム3つ登録
+    create:
+      success: アイテムを3つ登録しました
+      fail: アイテムの登録に失敗しました
   users:
   user_sessions:

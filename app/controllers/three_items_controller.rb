@@ -6,8 +6,9 @@ class ThreeItemsController < ApplicationController
   def create
     @form = Form::ItemCollection.new(item_collection_params)
     if @form.save
-      redirect_to calculations_path
+      redirect_to calculations_path, success: t('.success')
     else
+      flash.now[:danger] = t('.fail')
       render :new
     end
   end
