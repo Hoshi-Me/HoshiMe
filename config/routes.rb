@@ -6,4 +6,5 @@ Rails.application.routes.draw do
     get '/confirm', to: 'items#confirm', on: :collection
   end
   resources :calculations, only: %i[index]
+  resources :three_items, only: %i[new create]
 end
