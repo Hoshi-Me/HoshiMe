@@ -1,0 +1,11 @@
+ja:
+  activerecord:
+    models:
+      item: アイテム
+    attributes:
+      item:
+        name: 欲しいもの
+        degree: 欲しい度
+        start_date: いつから欲しい？
+        finish_date: いつまでに欲しい？
+        price: 値段
