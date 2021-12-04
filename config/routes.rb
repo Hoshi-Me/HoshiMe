@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   resources :items, only: %i[index new create edit update] do
     get '/confirm', to: 'items#confirm', on: :collection
   end
+  resources :calculations, only: %i[index]
 end
