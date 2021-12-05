@@ -10,4 +10,5 @@ Rails.application.routes.draw do
     get '/confirm', to: 'items#confirm', on: :collection
   end
   resources :calculations, only: %i[index]
+  resource :profiles, only: %i[show]
 end

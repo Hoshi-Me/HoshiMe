@@ -24,3 +24,6 @@ ja:
       fail: ログインに失敗しました
     destroy:
       success: ログアウトしました
+  profiles:
+    show:
+      title: マイページ
