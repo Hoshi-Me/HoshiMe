@@ -16,6 +16,8 @@ ja:
     create:
       success: ユーザを登録しました
       fail: ユーザの登録に失敗しました
+    destroy:
+      success: 退会しました
   sessions:
     new:
       title: ログイン

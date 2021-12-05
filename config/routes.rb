@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   post    '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
 
-  resources :users, only: %i[new create]
+  resources :users, only: %i[new create destroy]
   resources :items, only: %i[index new create edit update] do
     get '/confirm', to: 'items#confirm', on: :collection
   end

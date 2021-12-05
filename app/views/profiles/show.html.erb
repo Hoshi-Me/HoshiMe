@@ -2,3 +2,4 @@
 <p>名前：<%= current_user.name %></p>
 <p>メールアドレス：<%= current_user.email %></p>
 <%= link_to "編集", edit_profiles_path %>
+<%= link_to '退会', user_path(current_user), method: :delete, data: { confirm: '退会してもよろしいですか？' } %>
