@@ -20,7 +20,7 @@ gem 'jbuilder', '~> 2.7'
 
 gem 'sorcery'
 gem 'chart-js-rails'
-gem 'gon', '~> 6.0', '>= 6.0.1'
+gem 'gon'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password

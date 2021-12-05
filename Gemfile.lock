@@ -321,7 +321,7 @@ DEPENDENCIES
   capybara
   chart-js-rails
   factory_bot_rails
-  gon (~> 6.0, >= 6.0.1)
+  gon
   jbuilder (~> 2.7)
   listen (~> 3.3)
   pg (~> 1.1)
