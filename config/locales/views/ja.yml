@@ -27,3 +27,8 @@ ja:
   profiles:
     show:
       title: マイページ
+    edit:
+      title: プロフィール更新
+    update:
+      success: プロフィールを更新しました
+      fail: プロフィールの更新に失敗しました
