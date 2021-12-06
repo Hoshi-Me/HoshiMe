@@ -1,0 +1,64 @@
+<div class="shadow-lg rounded-lg overflow-hidden">
+  <canvas class="p-10" id="chartRadar"></canvas>
+</div>
+
+<!-- Chart radar -->
+<script>
+  const dataRadar = {
+    labels: [
+      "欲しい度",
+      "いつから欲しい？",
+      "いつまでに欲しい？",
+      "値段",
+    ],
+    datasets: [
+      {
+        label: gon.calculation_name,
+        data: [
+          gon.calculation.degree_value,
+          gon.calculation.start_value,
+          gon.calculation.finish_value,
+          gon.calculation.price_value
+        ],
+        fill: true,
+        backgroundColor: "rgba(133, 105, 241, 0.2)",
+        borderColor: "rgb(133, 105, 241)",
+        pointBackgroundColor: "rgb(133, 105, 241)",
+        pointBorderColor: "#fff",
+        pointHoverBackgroundColor: "#fff",
+        pointHoverBorderColor: "rgb(133, 105, 241)",
+      }
+    ],
+  };
+
+  const configRadarChart = {
+    type: "radar",
+    data: dataRadar,
+    options: {
+      title: {
+        display: true,
+        text: gon.calculation_name,
+        fontSize: 50
+      },
+      scale: {
+        ticks: {
+          suggestedMin: 0,
+          suggestedMax: 10,
+          stepSize: 2,
+          fontSize: 20
+        },
+        pointLabels: {
+          fontSize: 20
+        }
+      },
+      legend: {
+        display: false
+      }
+    }
+  };
+
+  var chartBar = new Chart(
+    document.getElementById("chartRadar"),
+    configRadarChart
+  );
+</script>
