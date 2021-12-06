@@ -1,6 +1,2 @@
 <h1>ランキング結果</h1>
-<% @calculations.each do |calculation| %>
-  <span>アイテム名<%= calculation.item.name %></span><br>
-  <span>計算値<%= calculation.sum %></span><br>
-  <span>=======</span><br>
-<% end %>
+<%= render @calculations %>
