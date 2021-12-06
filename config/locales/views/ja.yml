@@ -24,6 +24,7 @@ ja:
     create:
       success: ログインしました
       fail: ログインに失敗しました
+      danger: 退会したユーザーです
     destroy:
       success: ログアウトしました
   profiles:

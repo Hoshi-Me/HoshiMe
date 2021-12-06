@@ -15,8 +15,9 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    user = User.find(params[:id])
-    user.destroy
+    @user = User.find(params[:id])
+    @user.update(is_valid: false)
+    reset_session
     redirect_to root_path, success: t('.success')
   end
 
