@@ -22,8 +22,8 @@ class SessionsController < ApplicationController
 
   def reject_user
     @user = User.find_by(email: params[:email].downcase)
-    if !@user.nil? && (@user.valid_password?(params[:password]) && (@user.is_valid == false))
-      redirect_to login_path, danger: t('.danger')
-    end
+    return unless !@user.nil? && (@user.valid_password?(params[:password]) && (@user.is_valid == false))
+
+    redirect_to login_path, danger: t('.danger')
   end
 end
