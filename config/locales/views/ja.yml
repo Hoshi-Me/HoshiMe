@@ -11,4 +11,16 @@ ja:
       success: アイテムを登録しました
       fail: アイテムの登録に失敗しました
   users:
-  user_sessions:
+    new:
+      title: 新規登録
+    create:
+      success: ユーザを登録しました
+      fail: ユーザの登録に失敗しました
+  sessions:
+    new:
+      title: ログイン
+    create:
+      success: ログインしました
+      fail: ログインに失敗しました
+    destroy:
+      success: ログアウトしました

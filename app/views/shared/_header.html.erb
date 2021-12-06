@@ -6,7 +6,7 @@
     <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
       <%= link_to "ほしい物リスト", "#", class: 'mr-5 hover:text-gray-900' %>
       <%= link_to (t 'defaults.mypage'), "#", class: 'mr-5 hover:text-gray-900' %>
-      <%= link_to (t 'defaults.logout'), "#", class: 'mr-5 hover:text-gray-900' %>
+      <%= link_to (t 'defaults.logout'), logout_path, class: 'mr-5 hover:text-gray-900', method: :delete %>
     </nav>
   </div>
 </header>
