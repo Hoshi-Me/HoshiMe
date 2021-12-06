@@ -6,8 +6,9 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
 
   resources :users, only: %i[new create]
-  resources :items, only: %i[index new create edit update] do
+  resources :items, only: %i[index new create edit update destroy] do
     get '/confirm', to: 'items#confirm', on: :collection
   end
   resources :calculations, only: %i[index]
+  resources :three_items, only: %i[new create]
 end

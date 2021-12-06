@@ -1,6 +1,7 @@
 <h1>Update Item</h1>
 
 <%= form_with model: @item, local: true do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
   <%= f.label :name, '欲しいもの' %>
   <%= f.text_field :name %>
   <%= f.label :degree, '欲しい度' %>
