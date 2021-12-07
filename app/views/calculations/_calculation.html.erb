@@ -1,3 +1,2 @@
-<%= link_to calculation.item.name, calculation_path(calculation) %><br>
-<span>計算値<%= calculation.sum %></span><br>
-<span>=======</span><br>
+<%= link_to calculation.item.name, calculation_path(calculation), remote: :true %><br>
+<div id="modal-area"></div>
