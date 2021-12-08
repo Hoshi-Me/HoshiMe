@@ -1,0 +1,37 @@
+ja:
+  defaults:
+    login: ログイン
+    register: 新規登録
+    logout: ログアウト
+    mypage: マイページ
+  items:
+    new:
+      title: アイテム登録
+    create:
+      success: アイテムを登録しました
+      fail: アイテムの登録に失敗しました
+    update:
+      success: アイテムの情報を更新しました
+      fail: アイテムの更新に失敗しました
+    destroy:
+      success: アイテムを削除しました
+  three_items:
+    new:
+      title: アイテム3つ登録
+    create:
+      success: アイテムを3つ登録しました
+      fail: アイテムの登録に失敗しました
+  users:
+    new:
+      title: 新規登録
+    create:
+      success: ユーザを登録しました
+      fail: ユーザの登録に失敗しました
+  sessions:
+    new:
+      title: ログイン
+    create:
+      success: ログインしました
+      fail: ログインに失敗しました
+    destroy:
+      success: ログアウトしました
