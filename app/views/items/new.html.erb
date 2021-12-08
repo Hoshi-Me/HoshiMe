@@ -1,17 +1,15 @@
-<h1 class="text-red-500 text-5xl">欲しいもの登録ページ</h1>
-
-<%= form_with model: @form, url: items_path, local: true do |form| %>
-  <%= form.fields_for :items do |f| %>
-    <%= f.label :name, '欲しいもの' %>
-    <%= f.text_field :name %>
-    <%= f.label :degree, '欲しい度' %>
-    <%= f.text_field :degree %>
-    <%= f.label :start_date, 'いつから欲しい？' %>
-    <%= f.text_field :start_date %>
-    <%= f.label :dinish_date, 'いつまでに欲しい？' %>
-    <%= f.text_field :finish_date %>
-    <%= f.label :price, '値段は？' %>
-    <%= f.text_field :price %>
-  <% end %>
-  <%= form.submit %>
+<h1><%= t('.title') %></h1>
+<%= form_with model: @item, local: true do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <%= f.label :name, '欲しいもの' %>
+  <%= f.text_field :name %>
+  <%= f.label :degree, '欲しい度' %>
+  <%= f.text_field :degree %>
+  <%= f.label :start_date, 'いつから欲しい？' %>
+  <%= f.text_field :start_date %>
+  <%= f.label :dinish_date, 'いつまでに欲しい？' %>
+  <%= f.text_field :finish_date %>
+  <%= f.label :price, '値段は？' %>
+  <%= f.text_field :price %>
+  <%= f.submit %>
 <% end %>

@@ -1,22 +1,21 @@
 class ItemsController < ApplicationController
-  before_action :get_item, only: %i[edit update]
+  before_action :get_item, only: %i[edit update destroy]
 
   def index
     @items = Item.all
   end
 
   def new
-    # @item = Item.new
-    @form = Form::ItemCollection.new
+    @item = Item.new
   end
 
   def create
-    # @item = Item.new(item_params)
-    @form = Form::ItemCollection.new(item_collection_params)
-    # if @item.save
-    if @form.save
-      redirect_to calculations_path
+    @item = Item.new(item_params)
+    if @item.save
+      @item.calculation
+      redirect_to calculations_path, success: t('.success')
     else
+      flash.now[:danger] = t('.fail')
       render :new
     end
   end
@@ -25,10 +24,17 @@ class ItemsController < ApplicationController
 
   def update
     if @item.update(item_params)
-      redirect_to confirm_items_path
+      @item.calculation
+      redirect_to items_path, success: t('.success')
     else
+      flash.now[:danger] = t('.fail')
       render :edit
     end
+  end
+
+  def destroy
+    @item.destroy
+    redirect_to items_path, success: t('.success')
   end
 
   def confirm
@@ -43,9 +49,5 @@ class ItemsController < ApplicationController
 
   def item_params
     params.require(:item).permit(:name, :degree, :start_date, :finish_date, :price)
-  end
-
-  def item_collection_params
-    params.require(:form_item_collection).permit(items_attributes: %i[name degree start_date finish_date price])
   end
 end
