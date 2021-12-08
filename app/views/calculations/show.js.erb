@@ -1,2 +1,4 @@
-$("#modal-area").html("<%= j(render 'show') %>");
+// アイテム名をクリックすると'show'部分テンプレートがHTML要素に追加される
+$("#modal-area").html("<%= j(render 'show', calculation: @calculation) %>");
+// その要素を表示
 $("#modal-area").show();
