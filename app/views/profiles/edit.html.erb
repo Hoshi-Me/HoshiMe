@@ -1,0 +1,12 @@
+<h1><%= t('.title') %></h1>
+<%= form_with model: @user, url: profiles_path, local: true do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :email %>
+  <%= f.email_field :email %>
+
+  <%= f.submit %>
+<% end %>
