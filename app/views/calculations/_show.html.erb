@@ -1,7 +1,10 @@
 <%= Gon::Base.render_data %>
 <div class="flex justify-center">
-  <div class='w-3/4 shadow-lg rounded-lg overflow-hidden'>
-    <div class='calculation-item-area'>
+  <div class='p-5 modal-bg w-2/3 shadow-lg rounded-lg overflow-hidden'>
+    <div class='radar-chart-area'>
+      <canvas class='' id='chartRadar'></canvas>
+    </div>
+    <div class='calculation-item-area flex justify-center'>
       <table class="table-auto">
         <thead>
           <tr>
@@ -28,9 +31,6 @@
           </tr>
         </tbody>
       </table>
-    </div>
-    <div class='radar-chart-area'>
-      <canvas class='p-10' id='chartRadar'></canvas>
     </div>
   </div>
 </div>
@@ -71,17 +71,20 @@
       title: {
         display: true,
         text: gon.calculation_name,
-        fontSize: 50
+        fontSize: 50,
+        fontColor: '#000'
       },
       scale: {
         ticks: {
           suggestedMin: 0,
           suggestedMax: 10,
           stepSize: 2,
-          fontSize: 20
+          fontSize: 20,
+          fontColor: '#000'
         },
         pointLabels: {
-          fontSize: 20
+          fontSize: 20,
+          fontColor: '#000'
         }
       },
       legend: {
