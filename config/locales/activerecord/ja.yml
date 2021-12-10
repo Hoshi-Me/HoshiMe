@@ -9,3 +9,8 @@ ja:
         start_date: いつから欲しい？
         finish_date: いつまでに欲しい？
         price: 値段
+      user:
+        name: ユーザー名
+        email: メールアドレス
+        password: パスワード
+        password_confirmation: パスワード確認
