@@ -4,3 +4,10 @@ $("#modal-area").html("<%= j(render 'show', calculation: @calculation) %>");
 $("div.modal-overlay").addClass('modal-background')
 // その要素を表示
 $("#modal-area").show();
+
+// 閉じる動作
+$("#modal-close").on("click", function(){
+  $("#modal-area").toggle();
+  $("#modal-area").empty();
+  $("div.modal-overlay").removeClass('modal-background')
+});
