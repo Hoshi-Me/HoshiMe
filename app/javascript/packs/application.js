@@ -10,6 +10,7 @@ import "channels"
 import '@fortawesome/fontawesome-free/js/all'
 import "../src/application.scss"
 require('jquery')
+require('chart.js')
 
 Rails.start()
 Turbolinks.start()
