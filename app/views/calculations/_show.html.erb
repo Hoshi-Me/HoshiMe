@@ -1,0 +1,105 @@
+<%= Gon::Base.render_data %>
+<div class="flex justify-center">
+  <div class='p-5 modal-bg w-2/3 shadow-lg rounded-lg overflow-hidden'>
+    <div class='radar-chart-area'>
+      <canvas class='' id='chartRadar'></canvas>
+    </div>
+    <div class='calculation-item-area pt-2 flex justify-center'>
+      <table class="table-auto">
+        <thead>
+          <tr>
+            <th>項目</th>
+            <th>値</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>欲しい度</td>
+            <td><%= calculation.item.degree %>%</td>
+          </tr>
+          <tr>
+            <td>いつから欲しい？</td>
+            <td><%= calculation.item.start_date %>日前</td>
+          </tr>
+          <tr>
+            <td>いつまでに欲しい？</td>
+            <td><%= calculation.item.finish_date %>日後</td>
+          </tr>
+          <tr>
+            <td>値段</td>
+            <td><%= calculation.item.price %>円</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="pt-2 flex justify-center" id="modal-close">
+      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+        閉じる
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Chart radar -->
+<script>
+  var dataRadar = {
+    labels: [
+      "欲しい度",
+      "いつから欲しい？",
+      "いつまでに欲しい？",
+      "値段",
+    ],
+    datasets: [
+      {
+        label: gon.calculation_name,
+        data: [
+          gon.calculation.degree_value,
+          gon.calculation.start_value,
+          gon.calculation.finish_value,
+          gon.calculation.price_value
+        ],
+        fill: true,
+        backgroundColor: "rgba(133, 105, 241, 0.2)",
+        borderColor: "rgb(133, 105, 241)",
+        pointBackgroundColor: "rgb(133, 105, 241)",
+        pointBorderColor: "#fff",
+        pointHoverBackgroundColor: "#fff",
+        pointHoverBorderColor: "rgb(133, 105, 241)",
+      }
+    ],
+  };
+
+  var configRadarChart = {
+    type: "radar",
+    data: dataRadar,
+    options: {
+      title: {
+        display: true,
+        text: gon.calculation_name,
+        fontSize: 50,
+        fontColor: '#000'
+      },
+      scale: {
+        ticks: {
+          suggestedMin: 0,
+          suggestedMax: 10,
+          stepSize: 2,
+          fontSize: 20,
+          fontColor: '#000'
+        },
+        pointLabels: {
+          fontSize: 20,
+          fontColor: '#000'
+        }
+      },
+      legend: {
+        display: false
+      }
+    }
+  };
+
+  var chartBar = new Chart(
+    document.getElementById("chartRadar"),
+    configRadarChart
+  );
+</script>
