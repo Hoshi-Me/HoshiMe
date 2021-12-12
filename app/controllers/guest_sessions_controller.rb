@@ -1,6 +1,5 @@
 class GuestSessionsController < ApplicationController
 
-
   def create
     @user = User.guest
     auto_login(@user)
