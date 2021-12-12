@@ -11,10 +11,12 @@ class User < ApplicationRecord
   before_create -> { self.uuid = SecureRandom.uuid }
 
   def self.guest
-    find_or_create_by!(email: 'guest@example.com') do |user|
-      user.password = SecureRandom.urlsafe_base64
-      user.password_confirmation = user.password
-      user.name = 'ゲスト'
-    end
+    random_value = SecureRandom.hex
+    user = User.create!( name: random_value, email: "guest_#{random_value}@example.com" )
+    user.password = SecureRandom.urlsafe_base64
+    user.password_confirmation = user.password
+    user.name = 'ゲスト'
+    auto_login(user)
+    redirect_to new_three_item_path
   end
 end
