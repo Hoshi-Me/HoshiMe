@@ -1,4 +1,99 @@
 <h1>ランキング結果</h1>
+
+<div class="shadow-lg rounded-lg overflow-hidden">
+  <canvas class="p-10" id="chartRadar"></canvas>
+</div>
+
 <div class="modal-overlay"></div>
 <div id="modal-area"></div>
 <%= render @calculations %>
+
+<!-- Chart radar -->
+<script>
+  var dataRadar = {
+    labels: [
+      "欲しい度",
+      "いつから欲しい？",
+      "いつまでに欲しい？",
+      "値段",
+    ],
+    datasets: [
+      {
+        label: gon.calculations_name[0],
+        data: [
+          gon.calculations[0].degree_value,
+          gon.calculations[0].start_value,
+          gon.calculations[0].finish_value,
+          gon.calculations[0].price_value
+        ],
+        fill: true,
+        backgroundColor: "rgba(0, 0, 255, 0.2)",
+        borderColor: "rgb(0, 0, 255)",
+        pointBackgroundColor: "rgb(0, 0, 255)",
+        pointBorderColor: "#fff",
+        pointHoverBackgroundColor: "#fff",
+        pointHoverBorderColor: "rgb(0, 0, 255)",
+      },
+      {
+        label: gon.calculations_name[1],
+        data: [
+          gon.calculations[1].degree_value,
+          gon.calculations[1].start_value,
+          gon.calculations[1].finish_value,
+          gon.calculations[1].price_value
+        ],
+        fill: true,
+        backgroundColor: "rgba(204, 0, 0, 0.2)",
+        borderColor: "rgb(204, 0, 0)",
+        pointBackgroundColor: "rgb(204, 0, 0)",
+        pointBorderColor: "#fff",
+        pointHoverBackgroundColor: "#fff",
+        pointHoverBorderColor: "rgb(204, 0, 0)",
+      },
+      {
+        label: gon.calculations_name[2],
+        data: [
+          gon.calculations[2].degree_value,
+          gon.calculations[2].start_value,
+          gon.calculations[2].finish_value,
+          gon.calculations[2].price_value
+        ],
+        fill: true,
+        backgroundColor: "rgba(255, 255, 0, 0.2)",
+        borderColor: "rgb(255, 255, 0)",
+        pointBackgroundColor: "rgb(255, 255, 0)",
+        pointBorderColor: "#fff",
+        pointHoverBackgroundColor: "#fff",
+        pointHoverBorderColor: "rgb(255, 255, 0)",
+      }
+    ],
+  };
+
+  var configRadarChart = {
+    type: "radar",
+    data: dataRadar,
+    options: {
+      scale: {
+        ticks: {
+          suggestedMin: 0,
+          suggestedMax: 10,
+          stepSize: 2,
+          fontSize: 20,
+          fontColor: '#000'
+        },
+        pointLabels: {
+          fontSize: 20,
+          fontColor: '#000'
+        }
+      },
+      legend: {
+        display: false
+      }
+    }
+  };
+
+  var chartBar = new Chart(
+    document.getElementById("chartRadar"),
+    configRadarChart
+  );
+</script>
