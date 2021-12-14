@@ -3,9 +3,7 @@ class CalculationsController < ApplicationController
     @calculations = Calculation.all.includes(:item).order(sum: :desc)
     calculations = @calculations.first(3)
     calculations_name = []
-    calculations.each do |calculation|
-      calculations_name << calculation.item.name
-    end
+    calculations.each { |calculation| calculations_name << calculation.item.name }
     gon.calculations_name = calculations_name
     gon.calculations = calculations
   end
