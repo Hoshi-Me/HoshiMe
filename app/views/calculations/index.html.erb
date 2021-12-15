@@ -1,12 +1,15 @@
 <h1>ランキング結果</h1>
+<% if @calculations.present? %>
+  <div class="shadow-lg rounded-lg overflow-hidden">
+    <canvas class="p-10" id="index_chartRadar"></canvas>
+  </div>
 
-<div class="shadow-lg rounded-lg overflow-hidden">
-  <canvas class="p-10" id="index_chartRadar"></canvas>
-</div>
-
-<div class="modal-overlay"></div>
-<div id="modal-area"></div>
-<%= render @calculations %>
+  <div class="modal-overlay"></div>
+  <div id="modal-area"></div>
+  <%= render @calculations %>
+<% else %>
+  <p>欲しいものが登録されていません。</p>
+<% end %>
 
 <!-- Chart radar -->
 <script>
