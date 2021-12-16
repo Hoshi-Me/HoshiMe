@@ -9,4 +9,12 @@ class User < ApplicationRecord
   validates :password_confirmation, presence: true, if: -> { new_record? || changes[:crypted_password] }
 
   before_create -> { self.uuid = SecureRandom.uuid }
+
+  def self.guest
+    random_value = SecureRandom.hex(3)
+    find_or_create_by!(name: random_value, email: "guest_#{random_value}@example.com") do |user|
+      user.password = SecureRandom.urlsafe_base64
+      user.password_confirmation = user.password
+    end
+  end
 end
