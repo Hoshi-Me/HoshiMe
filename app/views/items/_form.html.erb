@@ -1,0 +1,75 @@
+<%= form_with model: item, local: true do |f| %>
+<%= render 'shared/error_messages', object: f.object %>
+  <div class="mb-6">
+    <%= f.label :name, class: "block mb-2 text-sm text-gray-600 dark:text-gray-400" %>
+    <%= f.text_field :name, placeholder: "商品名", class: "w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" %>
+  </div>
+  <div class="mb-6">
+    <%= f.label :degree, class: "block mb-2 text-sm text-gray-600 dark:text-gray-400" %>
+    <%= f.range_field :degree, class: "border w-full app border-gray-300 rounded-md focus:outline-none", min: "0", max: "100" %>
+  </div>
+  <div class="mb-6">
+    <%= f.label :start_date, class: "block mb-2 text-sm text-gray-600 dark:text-gray-400" %>
+    <%= f.range_field :start_date, class: "border w-full app border-gray-300 rounded-md focus:outline-none", min:"0", max:"360" %>
+  </div>
+  <div class="mb-6">
+    <%= f.label :finish_date, class: "block mb-2 text-sm text-gray-600 dark:text-gray-400" %>
+    <%= f.range_field :finish_date, class: "border w-full app border-gray-300 rounded-md focus:outline-none", min:"0", max:"360" %>
+  </div>
+  <div class="mb-6">
+    <%= f.label :price, class: "block mb-2 text-sm text-gray-600 dark:text-gray-400" %>
+    <%= f.range_field :price, class: "border w-full app border-gray-300 rounded-md focus:outline-none", min:"0", max:"100000" %>
+  </div>
+  <div class="mb-6">
+    <%= f.button :submit, class: "w-full px-3 py-4 text-white bg-indigo-500 rounded-md focus:bg-indigo-600 focus:outline-none" %>
+  </div>
+<% end %>
+
+<script>
+$('#item_degree').jRange({
+  from: 0,
+  to: 100,
+  format: '%s %',
+  scale: [0,10, 20, 30, 40, 50, 60, 70, 80, 90, "100%"],
+  width: '100%',
+  theme: "theme-blue",
+  showLabels: false,
+  onstatechange: function(){
+    $("#item_degree").trigger('change');
+  }
+});
+$('#item_start_date').jRange({
+  from: 0,
+  to: 360,
+  scale: ["今日", 1,2, 3, 4, 5, 6, 7, 8, 9, 10, 11, "12ヶ月前"],
+  width: '100%',
+  theme: "theme-blue",
+  showLabels: false,
+  onstatechange: function(){
+    $("#item_start_date").trigger('change');
+  }
+});
+$('#item_finish_date').jRange({
+  from: 0,
+  to: 360,
+  scale: ["今日", 1,2, 3, 4, 5, 6, 7, 8, 9, 10, 11, "12ヶ月後"],
+  width: '100%',
+  theme: "theme-blue",
+  showLabels: false,
+  onstatechange: function(){
+    $("#item_finish_date").trigger('change');
+  }
+});
+$('#item_price').jRange({
+  from: 0,
+  to: 100000,
+  format: '%s 万円',
+  scale: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "10万円"],
+  width: '100%',
+  theme: "theme-blue",
+  showLabels: false,
+  onstatechange: function(){
+    $("#item_price").trigger('change');
+  }
+});
+</script>

@@ -38,4 +38,54 @@
   </div>
 </div>
 
+<script>
+
+$('#form_item_collection_items_attributes_0_degree, #form_item_collection_items_attributes_1_degree, #form_item_collection_items_attributes_2_degree').jRange({
+  from: 0,
+  to: 100,
+  format: '%s %',
+  scale: [0,10, 20, 30, 40, 50, 60, 70, 80, 90, "100%"],
+  width: '100%',
+  theme: "theme-blue",
+  showLabels: false,
+  onstatechange: function(){
+    $("#item_degree").trigger('change');
+  }
+});
+$('#form_item_collection_items_attributes_0_start_date, #form_item_collection_items_attributes_1_start_date, #form_item_collection_items_attributes_2_start_date').jRange({
+  from: 0,
+  to: 180,
+  scale: ["今日", 1,2, 3, 4, 5, 6, 7, 8, 9, 10, 11, "12ヶ月前"],
+  width: '100%',
+  theme: "theme-blue",
+  showLabels: false,
+  onstatechange: function(){
+    $("#item_start_date").trigger('change');
+  }
+});
+$('#form_item_collection_items_attributes_0_finish_date, #form_item_collection_items_attributes_1_finish_date, #form_item_collection_items_attributes_2_finish_date').jRange({
+  from: 0,
+  to: 180,
+  scale: ["今日", 1,2, 3, 4, 5, 6, 7, 8, 9, 10, 11, "12ヶ月後"],
+  width: '100%',
+  theme: "theme-blue",
+  showLabels: false,
+  onstatechange: function(){
+    $("#item_finish_date").trigger('change');
+  }
+});
+$('#form_item_collection_items_attributes_0_price, #form_item_collection_items_attributes_1_price, #form_item_collection_items_attributes_2_price').jRange({
+  from: 0,
+  to: 100000,
+  format: '%s 万円',
+  scale: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "10万円"],
+  width: '100%',
+  theme: "theme-blue",
+  showLabels: false,
+  onstatechange: function(){
+    $("#item_price").trigger('change');
+  }
+});
+</script>
+
 <!-- https://tailwindcomponents.com/component/simple-sign-in -->
