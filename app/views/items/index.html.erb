@@ -1,12 +1,12 @@
-<section class="antialiased bg-yellow-50 text-gray-600 h-screen px-4">
-  <h1 class="flex justify-center py-3 text-xl lg:text-4xl font-semibold">欲しいものリスト一覧</h1>
-  <div class="flex flex-col justify-center h-4/6 lg:h-5/6">
+<section class="antialiased bg-yellow-50 text-gray-600 h-screen">
+  <h1 class="flex justify-center py-8 text-xl lg:text-4xl font-semibold">欲しいものリスト一覧</h1>
+  <div class="flex flex-col justify-center">
     <!-- Table -->
-    <div class="w-5/6 mx-auto bg-white shadow-lg rounded-sm border border-gray-200">
+    <div class="w-11/12 lg:w-5/6 mx-auto bg-white shadow-lg rounded-sm border border-gray-200">
       <header class="px-5 py-4 border-b border-gray-100">
           <h2 class="font-semibold text-center text-gray-800">欲しいものリスト</h2>
       </header>
-      <div class="p-3">
+      <div class="p-3 overflow-y-auto h-96">
         <div class="overflow-x-auto">
           <table class="table-auto w-full">
             <thead class="text-xs lg:text-lg font-semibold uppercase text-gray-400 bg-gray-50">
@@ -28,7 +28,7 @@
                 </th>
               </tr>
             </thead>
-            <tbody class="text-xs lg:text-lg divide-y divide-gray-100">
+            <tbody class="text-xs lg:text-md divide-y divide-gray-100">
               <%= render @items %>
             </tbody>
           </table>

@@ -1,16 +1,14 @@
-<h1>Update Item</h1>
+<div class="flex items-center min-h-screen bg-white dark:bg-gray-900">
+  <div class="container mx-auto">
+    <div class="max-w-md mx-auto my-10">
+      <div class="text-center">
+        <h1 class="my-3 text-3xl font-semibold text-gray-700 dark:text-gray-200"><%= t('.title') %></h1>
+      </div>
+      <div class="m-7">
+        <%= render 'form', { item: @item } %>
+      </div>
+    </div>
+  </div>
+</div>
 
-<%= form_with model: @item, local: true do |f| %>
-  <%= render 'shared/error_messages', object: f.object %>
-  <%= f.label :name, '欲しいもの' %>
-  <%= f.text_field :name %>
-  <%= f.label :degree, '欲しい度' %>
-  <%= f.text_field :degree %>
-  <%= f.label :start_date, 'いつから欲しい？' %>
-  <%= f.text_field :start_date %>
-  <%= f.label :dinish_date, 'いつまでに欲しい？' %>
-  <%= f.text_field :finish_date %>
-  <%= f.label :price, '値段は？' %>
-  <%= f.text_field :price %>
-  <%= f.submit %>
-<% end %>
+<!-- https://tailwindcomponents.com/component/simple-sign-in -->

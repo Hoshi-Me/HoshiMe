@@ -9,6 +9,8 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import '@fortawesome/fontawesome-free/js/all'
 import "../src/application.scss"
+import "../library/jquery.range.js"
+
 require('jquery')
 require('chart.js')
 
