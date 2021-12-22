@@ -17,17 +17,3 @@ require('chart.js')
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
-
-$('#item_degree').jRange({
-  from: 0,
-  to: 100,
-  step: 10,
-  scale: [0,10, 20, 30, 40, 50, 60, 70, 80, 90, 100],
-  format: '%s',
-  width: '100%',
-  theme: "theme-blue",
-  showLabels: false,
-  onstatechange: function(){
-    $("#item_degree").trigger('change');
-  }
-});
