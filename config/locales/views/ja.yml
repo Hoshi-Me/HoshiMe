@@ -10,6 +10,8 @@ ja:
     create:
       success: アイテムを登録しました
       fail: アイテムの登録に失敗しました
+    edit:
+      title: アイテム編集
     update:
       success: アイテムの情報を更新しました
       fail: アイテムの更新に失敗しました
