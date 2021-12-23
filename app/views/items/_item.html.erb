@@ -1,0 +1,29 @@
+<tr>
+  <td class="p-2 whitespace-nowrap">
+    <div class="flex items-center">
+        <div class="font-medium text-gray-800"><%= item.name %></div>
+    </div>
+  </td>
+  <td class="p-2 whitespace-nowrap">
+    <div class="text-center"><%= item.degree %>%</div>
+  </td>
+  <td class="p-2 whitespace-nowrap">
+    <div class="text-center"><%= item.start_date %>日前</div>
+  </td>
+  <td class="p-2 whitespace-nowrap">
+    <div class="text-center"><%= item.finish_date %>日後</div>
+  </td>
+  <td class="p-2 whitespace-nowrap">
+    <div class="text-center"><%= item.price %>円</div>
+  </td>
+  <td class="p-2 whitespace-nowrap">
+    <%= link_to edit_item_path(item) do %>
+      <i class="fas fa-pen text-green-400"></i>
+    <% end %>
+  </td>
+  <td class="p-2 whitespace-nowrap">
+    <%= link_to item_path(item), method: :delete, data: {confirm: "削除してもいいですか？"} do %>
+      <i class="fas fa-trash text-red-400"></i>
+    <% end %>
+  </td>
+</tr>
