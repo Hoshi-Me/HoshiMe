@@ -115,10 +115,10 @@ Rails.application.config.sorcery.configure do |config|
   # Twitter will not accept any requests nor redirect uri containing localhost,
   # Make sure you use 0.0.0.0:3000 to access your app in development
   #
-  # config.twitter.key = ""
-  # config.twitter.secret = ""
-  # config.twitter.callback_url = "http://0.0.0.0:3000/oauth/callback?provider=twitter"
-  # config.twitter.user_info_mapping = {:email => "screen_name"}
+  config.twitter.key = Rails.application.credentials.dig(:twitter, :key)
+  config.twitter.secret = Rails.application.credentials.dig(:twitter, :secret_key)
+  config.twitter.callback_url = "http://127.0.0.1:3000/oauth/callback?provider=twitter"
+  config.twitter.user_info_mapping = {email: "screen_name", name: "name"}
   #
   # config.facebook.key = ""
   # config.facebook.secret = ""
@@ -542,7 +542,7 @@ Rails.application.config.sorcery.configure do |config|
     # Class which holds the various external provider data for this user.
     # Default: `nil`
     #
-    # user.authentications_class =
+    user.authentications_class = Authentication
 
     # User's identifier in the `authentications` class.
     # Default: `:user_id`
