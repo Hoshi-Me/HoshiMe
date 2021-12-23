@@ -1,9 +1,32 @@
-<h1>ランキング結果</h1>
+<h1 class="flex justify-center py-5 lg:py-10 text-gray-600 text-2xl lg:text-4xl font-semibold">ランキング結果</h1>
 <% if @calculations.present? %>
-  <div class="modal-overlay"></div>
-  <div id="modal-area"></div>
-  <%= render @calculations %>
-
+  <div class="">
+    <div class="modal-overlay"></div>
+    <div id="modal-area"></div>
+    <section class="container mx-auto font-mono">
+      <div class="w-full mb-8">
+        <div class="w-full overflow-x-auto flex justify-center">
+          <table class="w-11/12 text-center">
+            <thead class="bg-yellow-200">
+              <tr>
+                <th scope="col" class="py-3 px-6 text-xs lg:text-xl font-medium tracking-wider text-gray-700 dark:text-gray-400">
+                    順位
+                </th>
+                <th scope="col" class="py-3 px-6 text-xs lg:text-xl font-medium tracking-wider text-gray-700 dark:text-gray-400">
+                    欲しいもの
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <div class="">
+                <%= render @calculations %>
+              </div>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </div>
   <div class="shadow-lg rounded-lg overflow-hidden">
     <canvas class="p-10" id="index_chartRadar"></canvas>
   </div>
