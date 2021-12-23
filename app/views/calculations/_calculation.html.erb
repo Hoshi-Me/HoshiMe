@@ -1,14 +1,17 @@
-<tr class="text-md lg:text-3xl bg-white border-t border-yellow-200">
+<tr class="text-md lg:text-xl bg-white border-t border-yellow-200">
 <% if calculation_counter == 0 %>
   <td class="py-4 px-6 text-yellow-300 font-medium whitespace-nowrap dark:text-white">
+    <i class="fas fa-medal"></i>
 <% elsif calculation_counter == 1 %> 
   <td class="py-4 px-6 text-gray-400 font-medium whitespace-nowrap dark:text-white">
+    <i class="fas fa-medal"></i>
 <% elsif calculation_counter == 2 %>
   <td class="py-4 px-6 text-yellow-800 font-medium whitespace-nowrap dark:text-white">
+    <i class="fas fa-medal"></i>
 <% else %> 
   <td class="py-4 px-6 text-gray-500 font-medium whitespace-nowrap dark:text-white">
+    <%= calculation_counter + 1  %>
 <% end %>
-    <%= "#{calculation_counter.to_i + 1 }位" %>
   </td>
   <td class="py-4 px-6 text-gray-500 whitespace-nowrap dark:text-gray-400">
     <%= link_to calculation.item.name, calculation_path(calculation), remote: :true %><br>
