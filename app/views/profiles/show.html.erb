@@ -1,5 +1,40 @@
-<h1><%= t('.title') %></h1>
-<p>名前：<%= current_user.name %></p>
-<p>メールアドレス：<%= current_user.email %></p>
-<%= link_to "編集", edit_profiles_path %>
-<%= link_to '退会', user_path(current_user), method: :delete, data: { confirm: '退会してもよろしいですか？' } %>
+<div class="flex justify-center my-10">
+  <h1 class="text-3xl"><%= t('.title') %></h1>
+</div>
+
+<div class="flex justify-center">
+  <div class="bg-white w-1/2 p-4 shadow-lg overflow-hidden sm:rounded-lg">
+    <div class="px-4 pt-3 pb-5 sm:px-6">
+      <div class="py-4 text-xl lg:text-2xl text-center leading-6 font-medium text-gray-900">
+        <%= "#{current_user.name}さんのプロフィール" %>
+      </div>
+    </div>
+    <div class="border-t border-gray-200 text-lg">
+      <dl>
+        <div class="px-4 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+          <dt class="font-medium text-gray-500">
+            お名前
+          </dt>
+          <dd class="mt-1 text-gray-900 sm:mt-0 sm:col-span-2">
+            <%= current_user.name %>
+          </dd>
+        </div>
+        <div class="px-4 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 border-t border-gray-200">
+          <dt class="font-medium text-gray-500">
+            メールアドレス
+          </dt>
+          <dd class="mt-1 text-gray-900 sm:mt-0 sm:col-span-2">
+            <%= current_user.email %>
+          </dd>
+        </div>
+        <div class="px-4 pt-8 pb-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 border-t border-gray-200">
+          <dt class="opacity-0"></dt>
+          <dd class="mt-1 text-gray-900 sm:mt-0 sm:col-span-2">
+            <%= link_to "編集", edit_profiles_path, class: "text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:ring-green-300 dark:focus:ring-green-800 font-medium rounded-lg px-5 py-2.5 text-center m-4 mb-2" %>
+            <%= link_to "退会", user_path(current_user), method: :delete, data: { confirm: '退会してもよろしいですか？' }, class:"text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg px-5 py-2.5 text-center m-4 mb-2" %>
+          </dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+</div>
