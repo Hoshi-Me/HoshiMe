@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   authenticates_with_sorcery!
-  # has_many :items, dependent: :destroy
+  has_many :items, dependent: :destroy
 
   validates :name, presence: true, length: { minimum: 2, maximum: 15 }
   validates :email, presence: true, uniqueness: true

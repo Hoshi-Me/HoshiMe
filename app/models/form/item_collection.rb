@@ -1,6 +1,7 @@
 class Form::ItemCollection < Form::Base
   FORM_COUNT = 3
   attr_accessor :items
+  attr_accessor :user_id
 
   def initialize(attributes = {})
     super attributes
@@ -9,6 +10,10 @@ class Form::ItemCollection < Form::Base
 
   def items_attributes=(attributes)
     self.items = attributes.map { |_, v| Item.new(v) }
+    #current_user.self.items.build
+    #self.items.each do |i|
+      #i.user_id = current_user.id
+    #end
   end
 
   def save
