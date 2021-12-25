@@ -1,6 +1,6 @@
 <div class="flex justify-center py-7 lg:py-10 text-gray-600 text-2xl lg:text-4xl font-semibold"><i class="fas fa-crown text-yellow-300"></i>ランキング結果<i class="fas fa-crown text-yellow-300"></i></div>
 <% if @calculations.present? %>
-  <div class="modal-overlay"></div>
+  <div id="modal-overlay"></div>
   <div id="modal-area"></div>
   <div class="grid lg:grid-cols-2 grid-cols-1 pr-3">
     <section class="container mx-auto font-mono">
@@ -26,7 +26,7 @@
         </div>
       </div>
     </section>
-    <div class="hidden lg:block bg-white shadow-lg pl-5 h-1/2 w-full overflow-hidden">
+    <div class="hidden lg:block bg-white shadow-lg pl-5 h-screen w-full overflow-hidden">
       <p class="text-center text-md lg:text-xl underline pt-5">上位３件の計算データ</p>
       <div class="w-full">
         <canvas class="py-10 chartjs-render-monitor" id="index_chartRadar" style="display: block; height: 850px; width: 1000px;"></canvas>

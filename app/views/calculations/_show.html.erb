@@ -1,10 +1,10 @@
 <%= Gon::Base.render_data %>
 <div class="flex justify-center">
-  <div class='calculation-show p-5 modal-bg w-2/3 shadow-lg rounded-lg overflow-hidden'>
+  <div class='p-5 absolute top-1/4 z-50 bg-white w-2/3 shadow-lg rounded-lg overflow-hidden'>
     <div class='radar-chart-area'>
       <canvas id='chartRadar'></canvas>
     </div>
-    <div class='calculation-item-area pt-2 flex justify-center'>
+    <div class='calculation-item-area border-t border-gray-200 mt-3 pt-2 flex justify-center'>
       <table class="table-auto">
         <thead>
           <tr>
@@ -32,8 +32,8 @@
         </tbody>
       </table>
     </div>
-    <div class="pt-2 flex justify-center" id="modal-close">
-      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+    <div class="pt-2 m-3 flex justify-center" id="modal-close">
+      <button class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-5 rounded">
         閉じる
       </button>
     </div>
@@ -44,8 +44,8 @@
 <script>
   var dataRadar = {
     labels: [
-      "欲しい度",
       "いつから欲しい？",
+      "欲しい度",
       "いつまでに欲しい？",
       "値段",
     ],
@@ -53,18 +53,18 @@
       {
         label: gon.calculation_name,
         data: [
-          gon.calculation.degree_value,
           gon.calculation.start_value,
+          gon.calculation.degree_value,
           gon.calculation.finish_value,
           gon.calculation.price_value
         ],
         fill: true,
-        backgroundColor: "rgba(133, 105, 241, 0.2)",
-        borderColor: "rgb(133, 105, 241)",
-        pointBackgroundColor: "rgb(133, 105, 241)",
+        backgroundColor: "rgba(255,215,0, 0.2)",
+        borderColor: "rgb(255,165,0)",
+        pointBackgroundColor: "rgb(255,215,0)",
         pointBorderColor: "#fff",
         pointHoverBackgroundColor: "#fff",
-        pointHoverBorderColor: "rgb(133, 105, 241)",
+        pointHoverBorderColor: "rgb(255,215,0)",
       }
     ],
   };
