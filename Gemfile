@@ -20,6 +20,7 @@ gem 'jbuilder', '~> 2.7'
 
 gem 'chart-js-rails'
 gem 'gon'
+gem 'meta-tags'
 
 # ユーザーログイン認証gem
 gem 'sorcery'
