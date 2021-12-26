@@ -13,7 +13,10 @@
     <%= calculation_counter + 1  %>
 <% end %>
   </td>
-  <td class="py-4 px-6 text-gray-500 whitespace-nowrap dark:text-gray-400">
+  <td class="hidden md:block py-4 px-6 text-gray-500 whitespace-nowrap dark:text-gray-400">
     <%= link_to calculation.item.name, calculation_path(id: calculation, rank: calculation_counter + 1), remote: :true %><br>
+  </td>
+  <td class="sm:block md:hidden py-4 px-6 text-gray-500 whitespace-nowrap dark:text-gray-400">
+    <%= link_to calculation.item.name, calculation_path(id: calculation, rank: calculation_counter + 1) %><br>
   </td>
 </tr>
