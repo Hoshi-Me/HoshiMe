@@ -1,5 +1,5 @@
 class Item < ApplicationRecord
-  # belongs_to :user
+  belongs_to :user
   has_one :calculation, dependent: :destroy
 
   validates :name, presence: true
