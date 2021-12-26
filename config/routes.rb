@@ -19,4 +19,7 @@ Rails.application.routes.draw do
   get 'uses', to: 'static_pages#uses'
 
   resource :contacts, only: [:new, :create]
+  resources :password_resets
+
+  mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
 end
