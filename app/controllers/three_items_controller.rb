@@ -18,6 +18,9 @@ class ThreeItemsController < ApplicationController
   private
 
   def item_collection_params
-    params.require(:form_item_collection).permit(items_attributes: %i[name degree start_date finish_date price])
+    params.require(:form_item_collection).permit(items_attributes: %i[name degree start_date finish_date price]).merge(user_id: current_user.id)
+    #params[:form_item_collection][:items_attributes]["0"].merge(user_id: current_user.id)
+    #params[:form_item_collection][:items_attributes]["1"].merge(user_id: current_user.id)
+    #params[:form_item_collection][:items_attributes]["2"].merge(user_id: current_user.id)
   end
 end
