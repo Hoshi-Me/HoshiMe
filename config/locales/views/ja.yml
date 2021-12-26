@@ -4,6 +4,7 @@ ja:
     register: 新規登録
     logout: ログアウト
     mypage: マイページ
+    submit: 送信
   items:
     new:
       title: アイテム登録
@@ -48,3 +49,8 @@ ja:
     update:
       success: プロフィールを更新しました
       fail: プロフィールの更新に失敗しました
+  contacts:
+    new:
+      title: お問い合わせ
+    create:
+      success: お問い合わせを受け付けました

@@ -17,4 +17,6 @@ Rails.application.routes.draw do
 
   get 'privacy', to: 'static_pages#privacy'
   get 'uses', to: 'static_pages#uses'
+
+  resource :contacts, only: [:new, :create]
 end
