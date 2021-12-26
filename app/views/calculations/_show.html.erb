@@ -5,32 +5,15 @@
       <canvas id='chartRadar'></canvas>
     </div>
     <div class='calculation-item-area border-t border-gray-200 mt-3 pt-2 flex justify-center'>
-      <table class="table-auto">
-        <thead>
-          <tr>
-            <th>項目</th>
-            <th>値</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>欲しい度</td>
-            <td><%= calculation.item.degree %>%</td>
-          </tr>
-          <tr>
-            <td>いつから欲しい？</td>
-            <td><%= calculation.item.start_date %>日前</td>
-          </tr>
-          <tr>
-            <td>いつまでに欲しい？</td>
-            <td><%= calculation.item.finish_date %>日後</td>
-          </tr>
-          <tr>
-            <td>値段</td>
-            <td><%= calculation.item.price %>円</td>
-          </tr>
-        </tbody>
-      </table>
+      <% if rank == '1' %>
+        <p class="text-center text-sm lg:text-xl py-5">お金がなくても今すぐ買いましょう！</p>
+      <% elsif rank == '2' %> 
+        <p class="text-center text-sm lg:text-xl py-5">一番欲しいものに負けないくらい欲しいものなら、これも買っちゃいなよ！</p>
+      <% elsif rank == '3' %>
+        <p class="text-center text-sm lg:text-xl py-5">衝動買いするのは待って！<br>もう少し考えてみましょう。</p>
+      <% else %>
+        <p class="text-center text-sm lg:text-xl py-5">お金ないんだろ？<br>今買うんじゃないよwww</p>
+      <% end %>
     </div>
     <div class="pt-2 m-3 flex justify-center" id="modal-close">
       <button class="cursor-pointer bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-5 rounded">

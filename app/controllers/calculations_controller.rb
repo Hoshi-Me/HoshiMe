@@ -10,6 +10,7 @@ class CalculationsController < ApplicationController
 
   def show
     @calculation = Calculation.find(params[:id])
+    @rank = params[:rank]
     gon.calculation_name = @calculation.item.name
     gon.calculation = @calculation
   end
