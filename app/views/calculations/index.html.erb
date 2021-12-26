@@ -5,24 +5,24 @@
   <div class="grid grid-cols-1 lg:grid-cols-2 lg:pr-8">
     <section class="container mx-auto font-mono">
       <div class="w-full mb-8">
-        <div class="w-full overflow-x-auto flex justify-center">
-          <table class="w-5/6 text-center">
-            <thead class="bg-yellow-200">
-              <tr>
-                <th scope="col" class="py-3 px-6 text-xs lg:text-xl font-medium tracking-wider text-gray-700 dark:text-gray-400">
-                    順位
-                </th>
-                <th scope="col" class="py-3 px-6 text-xs lg:text-xl font-medium tracking-wider text-gray-700 dark:text-gray-400">
-                    欲しいもの
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <div class="">
+        <div class="overflow-y-auto h-96">
+          <div class="w-full overflow-x-auto flex justify-center">
+            <table class="w-5/6 text-center">
+              <thead class="bg-yellow-200">
+                <tr>
+                  <th scope="col" class="py-3 px-6 text-xs lg:text-xl font-medium tracking-wider text-gray-700 dark:text-gray-400">
+                      順位
+                  </th>
+                  <th scope="col" class="py-3 px-6 text-xs lg:text-xl font-medium tracking-wider text-gray-700 dark:text-gray-400">
+                      欲しいもの
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
                 <%= render @calculations %>
-              </div>
-            </tbody>
-          </table>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </section>
