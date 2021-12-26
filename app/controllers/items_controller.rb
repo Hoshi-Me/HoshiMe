@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
   before_action :get_item, only: %i[edit update destroy]
 
   def index
-    @items = Item.all
+    @items = current_user.items
   end
 
   def new
@@ -10,7 +10,7 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = Item.new(item_params)
+    @item = current_user.items.new(item_params)
     if @item.save
       @item.calculation
       redirect_to calculations_path, success: t('.success')
