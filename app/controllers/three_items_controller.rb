@@ -7,6 +7,7 @@ class ThreeItemsController < ApplicationController
 
   def create
     @form = Form::ItemCollection.new(item_collection_params)
+    @form.items.each { |item| item[:user_id] = current_user.id }
     if @form.save
       redirect_to calculations_path, success: t('.success')
     else
@@ -18,9 +19,6 @@ class ThreeItemsController < ApplicationController
   private
 
   def item_collection_params
-    params.require(:form_item_collection).permit(items_attributes: %i[name degree start_date finish_date price]).merge(user_id: current_user.id)
-    #params[:form_item_collection][:items_attributes]["0"].merge(user_id: current_user.id)
-    #params[:form_item_collection][:items_attributes]["1"].merge(user_id: current_user.id)
-    #params[:form_item_collection][:items_attributes]["2"].merge(user_id: current_user.id)
+    params.require(:form_item_collection).permit(items_attributes: %i[name degree start_date finish_date price])
   end
 end
