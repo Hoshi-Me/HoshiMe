@@ -31,6 +31,7 @@
             <%= f.submit class: "w-full p-2 lg:p-2 text-white text-lg lg:text-xl bg-yellow-500 rounded-md focus:bg-yellow-600 focus:outline-none" %>
           </div>
         <% end %>
+        <%= link_to 'Twitterでログイン', auth_at_provider_path( provider: :twitter ) %>
       </div>
     </div>
   </div>

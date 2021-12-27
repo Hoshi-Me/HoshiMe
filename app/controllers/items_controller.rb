@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
   def index
     authorize(Item)
 
-    @items = Item.all
+    @items = current_user.items
   end
 
   def new
@@ -16,7 +16,7 @@ class ItemsController < ApplicationController
   def create
     authorize(Item)
 
-    @item = Item.new(item_params)
+    @item = current_user.items.new(item_params)
     if @item.save
       @item.calculation
       redirect_to calculations_path, success: t('.success')
