@@ -2,14 +2,20 @@ class ItemsController < ApplicationController
   before_action :get_item, only: %i[edit update destroy]
 
   def index
+    authorize(Item)
+
     @items = Item.all
   end
 
   def new
+    authorize(Item)
+    
     @item = Item.new
   end
 
   def create
+    authorize(Item)
+
     @item = Item.new(item_params)
     if @item.save
       @item.calculation
@@ -20,9 +26,13 @@ class ItemsController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit
+    authorize(@item)
+  end
 
   def update
+    authorize(@item)
+
     if @item.update(item_params)
       @item.calculation
       redirect_to items_path, success: t('.success')
@@ -33,6 +43,8 @@ class ItemsController < ApplicationController
   end
 
   def destroy
+    authorize(@item)
+
     @item.destroy
     redirect_to items_path, success: t('.success')
   end

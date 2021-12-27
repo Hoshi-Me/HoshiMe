@@ -1,9 +1,13 @@
 class UsersController < ApplicationController
   def new
+    authorize(User)
+
     @user = User.new
   end
 
   def create
+    authorize(User)
+
     @user = User.new(user_params)
     if @user.save
       auto_login(@user)
@@ -16,6 +20,9 @@ class UsersController < ApplicationController
 
   def destroy
     @user = User.find(params[:id])
+
+    authorize(@user)
+
     @user.update(is_valid: false)
     reset_session
     redirect_to root_path, success: t('.success')
