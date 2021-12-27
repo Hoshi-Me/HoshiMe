@@ -7,7 +7,7 @@ class ThreeItemsController < ApplicationController
 
   def create
     authorize(Item)
-    
+
     @form = Form::ItemCollection.new(item_collection_params)
     if @form.save
       redirect_to calculations_path, success: t('.success')

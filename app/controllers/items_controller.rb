@@ -9,7 +9,7 @@ class ItemsController < ApplicationController
 
   def new
     authorize(Item)
-    
+
     @item = Item.new
   end
 

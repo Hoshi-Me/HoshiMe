@@ -10,5 +10,4 @@ class ProfilePolicy < ApplicationPolicy
   def update?
     user.admin? || user.general? || user == record
   end
-
 end

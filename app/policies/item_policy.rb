@@ -22,5 +22,4 @@ class UserPolicy < ApplicationPolicy
   def destroy?
     user.admin? || user.general?
   end
-
 end

@@ -19,7 +19,7 @@ class SessionsController < ApplicationController
 
   def destroy
     authorize(User)
-    
+
     logout
     redirect_to root_path, success: t('.success')
   end
