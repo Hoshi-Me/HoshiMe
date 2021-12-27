@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   get 'privacy', to: 'static_pages#privacy'
   get 'uses', to: 'static_pages#uses'
 
-  resource :contacts, only: [:new, :create]
+  resource :contacts, only: %i[new create]
   resources :password_resets
 
   mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
