@@ -1,6 +1,6 @@
 class ProfilesController < ApplicationController
   before_action :get_user
-  
+
   def show; end
 
   def edit; end
