@@ -1,9 +1,9 @@
-class UserPolicy < ApplicationPolicy
+class ItemPolicy < ApplicationPolicy
   def index?
     user.admin? || user.general?
   end
 
-  def new
+  def new?
     user.admin? || user.general?
   end
 

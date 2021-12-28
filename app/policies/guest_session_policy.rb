@@ -1,4 +1,4 @@
-class UserPolicy < ApplicationPolicy
+class GuestPolicy < ApplicationPolicy
   def create?
     user.guest?
   end

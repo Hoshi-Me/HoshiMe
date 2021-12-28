@@ -1,4 +1,4 @@
-class UserPolicy < ApplicationPolicy
+class SessionPolicy < ApplicationPolicy
   def new
     user.admin? || user.nereral?
   end

@@ -3,7 +3,7 @@ class ProfilePolicy < ApplicationPolicy
     user.admin? || user.general?
   end
 
-  def edit
+  def edit?
     user.admin? || user.general?
   end
 

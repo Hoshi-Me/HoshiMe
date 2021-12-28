@@ -1,5 +1,5 @@
-class UserPolicy < ApplicationPolicy
-  def new
+class ThreeItemPolicy < ApplicationPolicy
+  def new?
     user.guest?
   end
 

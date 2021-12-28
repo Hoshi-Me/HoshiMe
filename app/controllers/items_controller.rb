@@ -3,20 +3,16 @@ class ItemsController < ApplicationController
 
   def index
     authorize(Item)
-
     @items = current_user.items
   end
 
   def new
-    authorize(Item)
-
-    @item = Item.new
+    @item = current_user.items.build
   end
 
   def create
     authorize(Item)
-
-    @item = current_user.items.new(item_params)
+    @item = current_user.items.build(item_params)
     if @item.save
       @item.calculation
       redirect_to calculations_path, success: t('.success')
@@ -26,13 +22,9 @@ class ItemsController < ApplicationController
     end
   end
 
-  def edit
-    authorize(@item)
-  end
+  def edit; end
 
   def update
-    authorize(@item)
-
     if @item.update(item_params)
       @item.calculation
       redirect_to items_path, success: t('.success')
@@ -43,20 +35,15 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    authorize(@item)
-
     @item.destroy
     redirect_to items_path, success: t('.success')
-  end
-
-  def confirm
-    @items = Item.all.order(created_at: :asc)
   end
 
   private
 
   def get_item
     @item = Item.find(params[:id])
+    authorize(@item)
   end
 
   def item_params

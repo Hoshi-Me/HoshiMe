@@ -1,20 +1,23 @@
 class UsersController < ApplicationController
   def new
-    authorize(User)
-
     @user = User.new
+
+    authorize(User)
   end
 
   def create
     authorize(User)
 
-    @user = User.new(user_params)
-    if @user.save
-      auto_login(@user)
-      redirect_to root_path, success: t('.success')
+    if current_user
+      @user = User.find(current_user.id)
+      if @user.update(user_params)
+        redirect_to items_path, success: t('.success')
+      else
+        flash.now[:danger] = t('.fail')
+        render :edit
+      end
     else
-      flash.now[:danger] = t('.fail')
-      render :new
+      redirect_to guest_path, warning: 'お先に欲しいものを登録してください。'
     end
   end
 
@@ -31,6 +34,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation).merge(role: 'general')
   end
 end

@@ -1,17 +1,11 @@
 class ProfilesController < ApplicationController
-  before_action :set_user
+  before_action :get_user
+  
+  def show; end
 
-  def show
-    authorize(@user)
-  end
-
-  def edit
-    authorize(Item)
-  end
+  def edit; end
 
   def update
-    authorize(@user)
-
     if @user.update(user_params)
       redirect_to profiles_path, success: t('.success')
     else
@@ -26,7 +20,8 @@ class ProfilesController < ApplicationController
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
 
-  def set_user
+  def get_user
     @user = User.find(current_user.id)
+    authorize(@user, policy_class: ProfilePolicy)
   end
 end

@@ -2,13 +2,13 @@ class ThreeItemsController < ApplicationController
   # skip_before_action :require_login, only: %i[new create]
 
   def new
-    authorize(Item)
+    authorize(Item, policy_class: ThreeItemPolicy)
 
     @form = Form::ItemCollection.new
   end
 
   def create
-    authorize(Item)
+    authorize(Item, policy_class: ThreeItemPolicy)
 
     @form = Form::ItemCollection.new(item_collection_params)
     @form.items.each { |item| item[:user_id] = current_user.id }

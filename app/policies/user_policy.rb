@@ -1,10 +1,22 @@
 class UserPolicy < ApplicationPolicy
-  def new
-    user.guest?
+  def show?
+    user.admin? || user.general?
+  end
+
+  def new?
+    user
   end
 
   def create?
     user.guest?
+  end
+
+  def edit?
+    user.admin? || user.general?
+  end
+
+  def update?
+    user.admin? || user.general?
   end
 
   def destroy?
