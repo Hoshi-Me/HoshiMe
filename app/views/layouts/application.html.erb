@@ -9,6 +9,8 @@
     <%= Gon::Base.render_data %>
     <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <%= display_meta_tags(default_meta_tags) %>
   </head>
 
   <body class="flex flex-col min-h-screen">

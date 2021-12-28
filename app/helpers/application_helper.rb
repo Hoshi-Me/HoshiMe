@@ -10,7 +10,6 @@ module ApplicationHelper
       canonical: request.original_url,
       separator: '|',
       icon: [
-        { href: image_url('favicon.png') },
         { href: image_url('favicon.png'), rel: 'apple-touch-icon', sizes: '180x180', type: 'image/jpg' }
       ],
       og: {
@@ -19,7 +18,6 @@ module ApplicationHelper
         description: :description,
         type: 'website',
         url: request.original_url,
-        image: image_url('ogp.png'),
         locale: 'ja_JP'
       },
       twitter: {
