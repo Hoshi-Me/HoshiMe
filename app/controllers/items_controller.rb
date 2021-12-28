@@ -7,6 +7,7 @@ class ItemsController < ApplicationController
   end
 
   def new
+    authorize(Item)
     @item = current_user.items.build
   end
 
