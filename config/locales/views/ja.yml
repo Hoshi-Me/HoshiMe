@@ -23,7 +23,7 @@ ja:
       title: アイテム登録
     create:
       success: アイテムを3つ登録しました
-      fail: アイテムの登録に失敗しました
+      fail: 欲しいものの名前を入力してください
   users:
     new:
       title: 新規登録
