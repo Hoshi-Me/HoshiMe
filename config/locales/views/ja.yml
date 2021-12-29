@@ -4,6 +4,7 @@ ja:
     register: 新規登録
     logout: ログアウト
     mypage: マイページ
+    submit: 送信
   items:
     new:
       title: アイテム登録
@@ -19,7 +20,7 @@ ja:
       success: アイテムを削除しました
   three_items:
     new:
-      title: アイテム3つ登録
+      title: アイテム登録
     create:
       success: アイテムを3つ登録しました
       fail: 欲しいものの名前を入力してください
@@ -48,3 +49,22 @@ ja:
     update:
       success: プロフィールを更新しました
       fail: プロフィールの更新に失敗しました
+  contacts:
+    new:
+      title: お問い合わせ
+    create:
+      success: お問い合わせを受け付けました
+  static_pages:
+    uses:
+      title: 利用規約
+    privacy:
+      title: プライバシーポリシー
+  password_resets:
+    new:
+      title: パスワードリセット申請
+    edit:
+      title: パスワードリセット
+    create:
+      success: メールを送信しました
+    update:
+      success: パスワードを変更しました
