@@ -8,7 +8,7 @@ class Item < ApplicationRecord
   validates :finish_date, presence: true
   validates :price, presence: true
 
-  def calculation
+  def calculate
     calculate_item = self
     calculate = calculate_item.build_calculation
     calculate.degree_value = calculate_degree(calculate_item.degree)

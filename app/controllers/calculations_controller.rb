@@ -1,6 +1,7 @@
 class CalculationsController < ApplicationController
   def index
-    @calculations = Calculation.all.includes(:item).order(sum: :desc)
+    @calculations = []
+    current_user.items.each { |item| @calculations << item.calculation }
     calculations = @calculations.first(3)
     calculations_name = []
     calculations.each { |calculation| calculations_name << calculation.item.name }
