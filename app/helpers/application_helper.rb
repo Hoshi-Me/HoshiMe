@@ -11,7 +11,7 @@ module ApplicationHelper
       separator: '|',
       icon: [
         # webpackerで画像を管理
-        # { href: image_url('favicon.png'), rel: 'apple-touch-icon', sizes: '180x180', type: 'image/jpg' } 
+        # { href: image_url('favicon.png'), rel: 'apple-touch-icon', sizes: '180x180', type: 'image/jpg' }
       ],
       og: {
         site_name: :site,
