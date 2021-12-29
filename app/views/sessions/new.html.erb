@@ -18,8 +18,8 @@
             <%= f.submit t('defaults.login'), class: "cursor-pointer w-full p-2 lg:p-2 text-white text-lg lg:text-xl bg-yellow-500 rounded-md focus:bg-yellow-600 focus:outline-none" %>
           </div>
         <% end %>
-        <div class="flex justify-center">
-          <%= link_to auth_at_provider_path( provider: :twitter ), class: "text-white bg-twitter-400 hover:bg-twitter-600 focus:ring-4 focus:ring-twitter-100 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#1da1f2]/55 mr-2 mb-2" do %>
+        <div class="flex justify-center border-t border-gray-300">
+          <%= link_to auth_at_provider_path( provider: :twitter ), class: "text-white bg-twitter-400 hover:bg-twitter-600 focus:ring-4 focus:ring-twitter-100 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#1da1f2]/55 mr-2 mb-2 mt-5" do %>
             <span><i class="fab fa-twitter"></i>Twitterでログイン</span>
           <% end %>
         </div>
