@@ -18,4 +18,12 @@ Rails.application.routes.draw do
   resources :calculations, only: %i[index show]
   resource :profiles, only: %i[show edit update]
   resources :three_items, only: %i[new create]
+
+  get 'privacy', to: 'static_pages#privacy'
+  get 'uses', to: 'static_pages#uses'
+
+  resource :contacts, only: %i[new create]
+  resources :password_resets
+
+  mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
 end

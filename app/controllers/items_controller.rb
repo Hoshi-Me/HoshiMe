@@ -28,7 +28,7 @@ class ItemsController < ApplicationController
   def update
     if @item.update(item_params)
       @item.calculation
-      redirect_to items_path, success: t('.success')
+      redirect_to calculations_path, success: t('.success')
     else
       flash.now[:danger] = t('.fail')
       render :edit

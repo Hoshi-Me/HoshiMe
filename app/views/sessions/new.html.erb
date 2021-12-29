@@ -15,13 +15,17 @@
             <%= f.password_field :password, placeholder: "パスワード", class: "w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" %>
           </div>
           <div class="mb-6">
-            <%= f.submit t('defaults.login'), class: "w-full p-2 lg:p-2 text-white text-lg lg:text-xl bg-yellow-500 rounded-md focus:bg-yellow-600 focus:outline-none" %>
+            <%= f.submit t('defaults.login'), class: "cursor-pointer w-full p-2 lg:p-2 text-white text-lg lg:text-xl bg-yellow-500 rounded-md focus:bg-yellow-600 focus:outline-none" %>
           </div>
         <% end %>
-        <%= link_to 'Twitterでログイン', auth_at_provider_path( provider: :twitter ) %>
+        <%= link_to 'パスワードを忘れた方はこちら', new_password_reset_path, class: "flex justify-center items-center mt-6 mb-3 text-sm lg:text-lg text-yellow-700 tracking-wide font-semibold font-sans" %>
+
+        <div class="flex justify-center border-t border-gray-300">
+          <%= link_to auth_at_provider_path( provider: :twitter ), class: "text-white bg-twitter-400 hover:bg-twitter-600 focus:ring-4 focus:ring-twitter-100 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#1da1f2]/55 mr-2 mb-2 mt-5" do %>
+            <span><i class="fab fa-twitter"></i>Twitterでログイン</span>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
 </div>
-
-<!-- https://tailwindcomponents.com/component/simple-sign-in -->

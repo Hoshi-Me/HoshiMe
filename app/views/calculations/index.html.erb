@@ -2,25 +2,27 @@
 <% if @calculations.present? %>
   <div id="modal-overlay"></div>
   <div id="modal-area"></div>
-  <div class="grid lg:grid-cols-2 grid-cols-1 pr-3">
+  <div class="grid grid-cols-1 lg:grid-cols-2 lg:pr-8">
     <section class="container mx-auto font-mono">
       <div class="w-full mb-8">
-        <div class="w-full overflow-x-auto flex justify-center">
-          <table class="w-5/6 text-center">
-            <thead class="bg-yellow-200">
-              <tr>
-                <th scope="col" class="py-3 px-6 text-xs lg:text-xl font-medium tracking-wider text-gray-700 dark:text-gray-400">
-                    順位
-                </th>
-                <th scope="col" class="py-3 px-6 text-xs lg:text-xl font-medium tracking-wider text-gray-700 dark:text-gray-400">
-                    欲しいもの
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <%= render @calculations %>
-            </tbody>
-          </table>
+        <div class="overflow-y-auto h-96">
+          <div class="w-full overflow-x-auto flex justify-center">
+            <table class="w-5/6 text-center">
+              <thead class="bg-yellow-200">
+                <tr>
+                  <th scope="col" class="py-3 px-6 text-xs lg:text-xl font-medium tracking-wider text-gray-700 dark:text-gray-400">
+                      順位
+                  </th>
+                  <th scope="col" class="py-3 px-6 text-xs lg:text-xl font-medium tracking-wider text-gray-700 dark:text-gray-400">
+                      欲しいもの
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <%= render @calculations %>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </section>
@@ -31,23 +33,28 @@
       </div>
     </div>
   </div>
+  <div class="flex justify-center grid grid-col-1 pt-8 pb-5">
+    <% if current_user.guest? %>
+      <p class="text-center text-md lg:text-xl">ユーザー登録すると今登録したアイテムを引き継いで使うことができます。</p>
+      <div class="flex justify-center py-7">
+        <%= button_to "アカウント登録はこちら", new_user_path, method: :get, class: "text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2" %>
+      </div>
+    <% else %>
+      <p class="text-center text-md lg:text-xl">他に追加したいものはありませんか？</p></p>
+      <div class="flex justify-center py-7">
+        <%= button_to "欲しいものを追加する", new_item_path, method: :get, class: "text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2" %>
+      </div>
+    <% end %>
+  </div>
 <% else %>
-  <p>欲しいものが登録されていません。</p>
+  <div class="text-center">
+    <p class="text-lg">欲しいものが登録されていません。</p>
+  </div>
+  <p class="text-center text-md lg:text-2xl pt-5">欲しいものを追加しましょう！</p></p>
+  <div class="flex justify-center py-7">
+    <%= button_to "欲しいものを追加する", new_item_path, method: :get, class: "text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2" %>
+  </div>
 <% end %>
-
-<div class="flex justify-center grid grid-col-1 pt-8 pb-5">
-  <% if current_user.guest? %>
-    <p class="text-center text-md lg:text-xl">ユーザー登録すると今登録したアイテムを引き継いで使うことができます。</p>
-    <div class="flex justify-center py-7">
-      <%= button_to "アカウント登録はこちら", new_user_path, method: :get, class: "text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2" %>
-    </div>
-  <% else %>
-    <p class="text-center text-md lg:text-xl">他に追加したいものはありませんか？</p></p>
-    <div class="flex justify-center py-7">
-      <%= button_to "欲しいものを追加する", new_item_path, method: :get, class: "text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2" %>
-    </div>
-  <% end %>
-</div>
 
 <!-- Chart radar -->
 <script>
