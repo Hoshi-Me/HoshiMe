@@ -2,12 +2,9 @@ class SessionsController < ApplicationController
   skip_before_action :require_login
   before_action :reject_user, only: %i[create]
 
-  def new
-    authorize(User, policy_class: SessionPolicy)
-  end
+  def new; end
 
   def create
-    authorize(User, policy_class: SessionPolicy)
     @user = login(params[:email], params[:password])
     if @user
       redirect_back_or_to root_path, success: t('.success')
