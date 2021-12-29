@@ -1,13 +1,13 @@
 class SessionPolicy < ApplicationPolicy
   def new
-    user.admin? || user.nereral?
+    user.nil? || user.admin?
   end
 
   def create?
-    user.admin? || user.nereral?
+    user.nil? || user.admin?
   end
 
   def destroy?
-    user.admin? || user.nereral?
+    user.admin? || user.general?
   end
 end

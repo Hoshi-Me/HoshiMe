@@ -1,9 +1,9 @@
 class ThreeItemPolicy < ApplicationPolicy
   def new?
-    user.guest?
+    user.guest? || user.admin?
   end
 
   def create?
-    user.guest?
+    user.guest? || user.admin?
   end
 end

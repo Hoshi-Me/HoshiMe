@@ -4,11 +4,11 @@ class UserPolicy < ApplicationPolicy
   end
 
   def new?
-    user
+    user.admin? || user.guest?
   end
 
   def create?
-    user.guest?
+    user.admin? || user.guest?
   end
 
   def edit?

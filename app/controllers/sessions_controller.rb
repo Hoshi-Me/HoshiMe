@@ -1,9 +1,12 @@
 class SessionsController < ApplicationController
   before_action :reject_user, only: %i[create]
 
-  def new; end
+  def new
+    authorize(User, policy_class: SessionPolicy)
+  end
 
   def create
+    authorize(User, policy_class: SessionPolicy)
     @user = login(params[:email], params[:password])
     if @user
       redirect_back_or_to root_path, success: t('.success')
@@ -14,7 +17,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    authorize(User)
+    authorize(User, policy_class: SessionPolicy)
 
     logout
     redirect_to root_path, success: t('.success')
