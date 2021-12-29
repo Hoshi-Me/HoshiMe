@@ -1,7 +1,7 @@
 // アイテム名をクリックすると'show'部分テンプレートがHTML要素に追加される
-$("#modal-area").html("<%= j(render 'show', calculation: @calculation) %>");
+$("#modal-area").html("<%= j(render 'show', {calculation: @calculation, rank: @rank}) %>");
 // 背景を暗くする
-$("div.modal-overlay").addClass('modal-background')
+$("div#modal-overlay").addClass('modal-background')
 // その要素を表示
 $("#modal-area").show();
 
@@ -9,7 +9,7 @@ $("#modal-area").show();
 $("#modal-close").on("click", function(){
   $("#modal-area").toggle();
   $("#modal-area").empty();
-  $("div.modal-overlay").removeClass('modal-background')
+  $("div#modal-overlay").removeClass('modal-background')
 });
 
 // モーダルウィンドウ以外をクリックした時
@@ -17,6 +17,6 @@ $(document).on('click',function(e) {
    if(!$(e.target).closest('#modal-area').length) {
     $("#modal-area").toggle();
     $("#modal-area").empty();
-    $("div.modal-overlay").removeClass('modal-background')
+    $("div#modal-overlay").removeClass('modal-background')
    }
 });

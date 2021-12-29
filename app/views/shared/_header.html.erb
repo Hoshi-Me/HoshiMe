@@ -1,12 +1,30 @@
-<header class="text-gray-600 body-font">
-  <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-    <%= link_to root_path, class: "flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0" do %>
-      <span class="ml-3 text-xl">HoshiMe</span>
-    <% end %>
-    <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
-      <%= link_to "ほしい物リスト", "#", class: 'mr-5 hover:text-gray-900' %>
-      <%= link_to (t 'defaults.mypage'), profiles_path, class: 'mr-5 hover:text-gray-900' %>
-      <%= link_to (t 'defaults.logout'), logout_path, class: 'mr-5 hover:text-gray-900', method: :delete %>
+<header class="sticky top-0 z-50">
+  <div class="header">
+    <nav class="bg-yellow-400 py-2">
+      <div class="container px-4 mx-auto md:flex md:items-center">
+        <div class="flex justify-between items-center">
+          <%= link_to "Hoshime", root_path, class: "pb-1 font-bold text-3xl text-yellow-100" %>
+          <button class="cursor-pointer border border-solid border-gray-100 px-3 py-1 rounded text-gray-100 opacity-50 hover:opacity-75 md:hidden" id="navbar-toggle">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+        <div class="hidden md:flex flex-col md:flex-row md:ml-auto mt-3 md:mt-0" id="navbar-collapse">
+          <%= link_to "欲しいもの追加", new_item_path, class: "p-2 lg:px-4 md:mx-2 text-md text-yellow-100 text-center border border-transparent rounded hover:bg-yellow-100 hover:text-yellow-700 transition-colors duration-300" %>
+          <%= link_to "欲しいものリスト", items_path, class: "p-2 lg:px-4 md:mx-2 text-md text-yellow-100 text-center border border-transparent rounded hover:bg-yellow-100 hover:text-yellow-700 transition-colors duration-300" %>
+          <%= link_to "マイページ", profiles_path, class: "p-2 lg:px-4 md:mx-2 text-md text-yellow-100 text-center border border-transparent rounded hover:bg-yellow-100 hover:text-yellow-700 transition-colors duration-300" %>
+          <%= link_to "ログアウト", logout_path, method: :delete, class: "p-2 lg:px-4 md:mx-2 text-md text-yellow-100 text-center border border-transparent rounded hover:bg-yellow-100 hover:text-yellow-700 transition-colors duration-300" %>
+        </div>
+      </div>
     </nav>
   </div>
 </header>
+
+<script>
+  var toggleBtn = document.querySelector("#navbar-toggle");
+  var collapse = document.querySelector("#navbar-collapse");
+
+  toggleBtn.onclick = () => {
+    collapse.classList.toggle("hidden");
+    collapse.classList.toggle("flex");
+  };
+</script>

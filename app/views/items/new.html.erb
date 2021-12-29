@@ -1,14 +1,12 @@
-<div class="flex items-center min-h-screen bg-white dark:bg-gray-900">
+<div class="flex items-center">
   <div class="container mx-auto">
-    <div class="max-w-md mx-auto my-10">
+    <div class="max-w-md mx-auto mt-6 2xl:mt-10">
       <div class="text-center">
-        <h1 class="my-3 text-3xl font-semibold text-gray-700 dark:text-gray-200"><%= t('.title') %></h1>
+        <h1 class="text-3xl font-semibold text-gray-700 dark:text-gray-200"><%= t('.title') %></h1>
       </div>
-      <div class="m-7">
+      <div class="m-4 2xl:m-7">
         <%= render 'form', { item: @item } %>
       </div>
     </div>
   </div>
 </div>
-
-<!-- https://tailwindcomponents.com/component/simple-sign-in -->

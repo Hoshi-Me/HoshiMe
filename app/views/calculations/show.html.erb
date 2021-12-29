@@ -1,24 +1,23 @@
 <%= Gon::Base.render_data %>
-<div class="flex justify-center">
-  <div class='p-5 absolute top-16 z-50 bg-white w-2/3 shadow-lg rounded-lg overflow-hidden'>
+<div class="flex justify-center pt-4">
+  <div class='absolute top-1/5 z-50 bg-white w-full shadow-lg rounded-lg overflow-hidden'>
     <div class='radar-chart-area'>
-      <canvas id='chartRadar'></canvas>
+      <p class="text-center pr-2 text-lg pt-4"><%= @calculation.item.name %></p>
+      <canvas class="chartjs-render-monitor pl-2" id="chartRadar" style="display: block; height: 900px; width: 1050px;"></canvas>
     </div>
     <div class='calculation-item-area border-t border-gray-200 mt-3 pt-2 flex justify-center'>
-      <% if rank == '1' %>
-        <p class="text-center text-sm lg:text-xl py-5">お金がなくても今すぐ買いましょう！</p>
-      <% elsif rank == '2' %> 
-        <p class="text-center text-sm lg:text-xl py-5">一番欲しいものに負けないくらい欲しいものなら、これも買っちゃいなよ！</p>
-      <% elsif rank == '3' %>
-        <p class="text-center text-sm lg:text-xl py-5">衝動買いするのは待って！<br>もう少し考えてみましょう。</p>
+      <% if @rank == '1' %>
+        <p class="text-center text-xs py-5 pl-2">お金がなくても今すぐ買いましょう！</p>
+      <% elsif @rank == '2' %> 
+        <p class="text-center text-xs py-5">一番欲しいものに負けないくらい欲しいものなら、<br>これも買っちゃいなよ！</p>
+      <% elsif @rank == '3' %>
+        <p class="text-center text-xs py-5">衝動買いするのは待って！<br>もう少し考えてみましょう。</p>
       <% else %>
-        <p class="text-center text-sm lg:text-xl py-5">お金ないんだろ？<br>今買うんじゃないよwww</p>
+        <p class="text-center text-xs py-5">お金ないんだろ？<br>今買うんじゃないよwww</p>
       <% end %>
     </div>
-    <div class="pt-2 flex justify-center" id="modal-close">
-      <button class="cursor-pointer bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-5 rounded">
-        閉じる
-      </button>
+    <div class="m-3 flex justify-center">
+      <%= button_to "閉じる", calculations_path, method: :get, class: "cursor-pointer bg-yellow-500 hover:bg-yellow-700 text-white text-xs font-bold py-2 px-3.5 rounded" %>
     </div>
   </div>
 </div>
@@ -34,7 +33,6 @@
     ],
     datasets: [
       {
-        label: gon.calculation_name,
         data: [
           gon.calculation.start_value,
           gon.calculation.degree_value,
@@ -56,22 +54,16 @@
     type: "radar",
     data: dataRadar,
     options: {
-      title: {
-        display: true,
-        text: gon.calculation_name,
-        fontSize: 50,
-        fontColor: '#000'
-      },
       scale: {
         ticks: {
           suggestedMin: 0,
           suggestedMax: 10,
           stepSize: 2,
-          fontSize: 20,
+          fontSize: 10,
           fontColor: '#000'
         },
         pointLabels: {
-          fontSize: 20,
+          fontSize: 12,
           fontColor: '#000'
         }
       },

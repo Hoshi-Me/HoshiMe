@@ -1,27 +1,29 @@
-<div class="flex items-center min-h-screen bg-white dark:bg-gray-900">
+<div class="flex items-center py-10">
   <div class="container mx-auto">
-    <div class="max-w-md mx-auto my-10">
+    <div class="max-w-md mx-auto">
       <div class="text-center">
-        <h1 class="my-3 text-3xl font-semibold text-gray-700 dark:text-gray-200">ログイン</h1>
+        <h1 class="my-7 pb-5 text-3xl font-semibold text-gray-700 dark:text-gray-200">ログイン</h1>
       </div>
       <div class="m-7">
         <%= form_with url: login_path, local: true do |f| %>
           <div class="mb-6">
-            <%= f.label :email, class: "block mb-2 text-sm text-gray-600 dark:text-gray-400" %>
+            <%= f.label User.human_attribute_name(:email), class: "block mb-2 text-sm text-gray-600 dark:text-gray-400" %>
             <%= f.email_field :email, placeholder: "メールアドレス", class: "w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" %>
           </div>
           <div class="mb-6">
-            <%= f.label :password, class: "block mb-2 text-sm text-gray-600 dark:text-gray-400" %>
+            <%= f.label User.human_attribute_name(:password), class: "block mb-2 text-sm text-gray-600 dark:text-gray-400" %>
             <%= f.password_field :password, placeholder: "パスワード", class: "w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" %>
           </div>
           <div class="mb-6">
-            <%= f.button :submit, class: "w-full px-3 py-4 text-white bg-indigo-500 rounded-md focus:bg-indigo-600 focus:outline-none" %>
+            <%= f.submit t('defaults.login'), class: "cursor-pointer w-full p-2 lg:p-2 text-white text-lg lg:text-xl bg-yellow-500 rounded-md focus:bg-yellow-600 focus:outline-none" %>
           </div>
         <% end %>
-        <%= link_to 'Twitterでログイン', auth_at_provider_path( provider: :twitter ) %>
+        <div class="flex justify-center border-t border-gray-300">
+          <%= link_to auth_at_provider_path( provider: :twitter ), class: "text-white bg-twitter-400 hover:bg-twitter-600 focus:ring-4 focus:ring-twitter-100 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#1da1f2]/55 mr-2 mb-2 mt-5" do %>
+            <span><i class="fab fa-twitter"></i>Twitterでログイン</span>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
 </div>
-
-<!-- https://tailwindcomponents.com/component/simple-sign-in -->

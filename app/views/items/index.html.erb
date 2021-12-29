@@ -3,9 +3,6 @@
   <div class="flex flex-col justify-center">
     <!-- Table -->
     <div class="w-11/12 lg:w-5/6 mx-auto bg-white shadow-lg rounded-sm border border-gray-200">
-      <header class="px-5 py-4 border-b border-gray-100">
-          <h2 class="font-semibold text-center text-gray-800">欲しいものリスト</h2>
-      </header>
       <div class="p-3 overflow-y-auto h-96">
         <div class="overflow-x-auto">
           <table class="table-auto w-full">
@@ -26,6 +23,8 @@
                 <th class="p-2 whitespace-nowrap">
                     <div class="font-semibold text-center">値段</div>
                 </th>
+                <th class="p-2 whitespace-nowrap"></th>
+                <th class="p-2 whitespace-nowrap"></th>
               </tr>
             </thead>
             <tbody class="text-xs lg:text-md divide-y divide-gray-100">
@@ -33,6 +32,17 @@
             </tbody>
           </table>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-5 2xl:mt-10">
+    <div class="flex justify-center grid grid-col-1">
+      <div class="flex justify-center">
+        <%= button_to "欲しいものを追加する", new_item_path, method: :get, class: "cursor-pointer font-semibold text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-md 2xl:text-lg px-5 py-2.5 text-center mr-2 mb-2" %>
+      </div>
+      <div class="flex justify-center">
+        <%= button_to "ランキングを見る", calculations_path, method: :get, class: "cursor-pointer font-semibold text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-md 2xl:text-lg px-9 py-2.5 text-center mr-2 mb-2" %>
       </div>
     </div>
   </div>
