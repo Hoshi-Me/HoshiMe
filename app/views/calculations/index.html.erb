@@ -44,14 +44,14 @@
       <div class="flex justify-center py-7">
         <%= button_to "欲しいものを追加する", new_item_path, method: :get, class: "text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2" %>
       </div>
-      <div class="flex justify-center pb-3">
-        <div class='bg-twitter-400 text-white rounded-full h-16 2xl:h-20 w-16 2xl:w-20 flex items-center justify-center shadow-xl'>
-          <%= link_to "https://twitter.com/intent/tweet?url=https://hoshime.herokuapp.com&text=HoshiMeに欲しいモノを投稿しました。&hashtags=HoshiMe,欲しいモノ,ランキング,お金,無駄&lang=ja", title: 'Twitter', target: :_blank, rel: 'noopener noreferrer'  do %>
-            <span><i class="fab fa-twitter text-3xl 2xl:text-4xl pt-1"></i></span>
-          <% end %>
-        </div>
-      </div>
     <% end %>
+    <div class="flex justify-center pb-3">
+      <div class='bg-twitter-400 text-white rounded-full h-16 2xl:h-20 w-16 2xl:w-20 flex items-center justify-center shadow-xl'>
+        <%= link_to "https://twitter.com/intent/tweet?url=https://hoshime.herokuapp.com&text=HoshiMeに欲しいモノを投稿しました。&hashtags=HoshiMe,欲しいモノ,ランキング,お金,無駄&lang=ja", title: 'Twitter', target: :_blank, rel: 'noopener noreferrer'  do %>
+          <span><i class="fab fa-twitter text-3xl 2xl:text-4xl pt-1"></i></span>
+        <% end %>
+      </div>
+    </div>
   </div>
 <% else %>
   <div class="text-center">
