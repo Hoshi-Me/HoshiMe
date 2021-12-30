@@ -26,7 +26,11 @@
 
   <body class="flex flex-col min-h-screen bg-yellow-50">
     <% if logged_in? %>
-      <%= render "shared/header" %>
+      <% if current_user.guest? %>
+        <%= render "shared/before_login_header" %>
+      <% else %>
+        <%= render "shared/header" %>
+      <% end %>
     <% else %>
       <%= render "shared/before_login_header" %>
     <% end %>

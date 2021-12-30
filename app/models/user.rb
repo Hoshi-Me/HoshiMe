@@ -12,6 +12,8 @@ class User < ApplicationRecord
 
   before_create -> { self.uuid = SecureRandom.uuid }
 
+  enum role: { guest: 0, admin: 1, general: 2 }
+
   def self.guest
     random_value = SecureRandom.hex(3)
     find_or_create_by!(name: random_value, email: "guest_#{random_value}@example.com") do |user|

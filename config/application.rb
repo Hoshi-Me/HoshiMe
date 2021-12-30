@@ -55,5 +55,8 @@ module HoshiMe
       g.helper false
       g.test_framework false
     end
+
+    # punditでアクセス権限で弾かれた時に例外を発生させる
+    config.action_dispatch.rescue_responses['Pundit::NotAuthorizedError'] = :forbidden
   end
 end

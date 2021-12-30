@@ -1,11 +1,12 @@
 class CalculationsController < ApplicationController
   def index
-    @calculations = Calculation.all.includes(:item).order(sum: :desc)
-    calculations = @calculations.first(3)
+    calculations = []
+    current_user.items.each { |item| calculations << item.calculation }
+    @calculations = calculations.sort_by { |x| x[:sum] }.reverse
     calculations_name = []
-    calculations.each { |calculation| calculations_name << calculation.item.name }
+    @calculations.each { |calculation| calculations_name << calculation.item.name }
     gon.calculations_name = calculations_name
-    gon.calculations = calculations
+    gon.calculations = @calculations.first(3)
   end
 
   def show
