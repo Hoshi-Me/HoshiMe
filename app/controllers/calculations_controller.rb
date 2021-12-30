@@ -2,7 +2,7 @@ class CalculationsController < ApplicationController
   def index
     calculations = []
     current_user.items.each { |item| calculations << item.calculation }
-    @calculations = calculations.sort_by{|x| x[:sum]}.reverse
+    @calculations = calculations.sort_by { |x| x[:sum] }.reverse
     calculations_name = []
     @calculations.each { |calculation| calculations_name << calculation.item.name }
     gon.calculations_name = calculations_name
