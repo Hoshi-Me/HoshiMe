@@ -24,7 +24,7 @@ class OauthsController < ApplicationController
     @user = create_from(provider)
     @user.update(role: 'general')
     current_user.items.each do |item|
-      item = @user.items.create( name: item.name, degree: item.degree, start_date: item.start_date, finish_date: item.finish_date, price: item.price )
+      item = @user.items.create(name: item.name, degree: item.degree, start_date: item.start_date, finish_date: item.finish_date, price: item.price)
       item.calculate
     end
     reset_session
