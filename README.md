@@ -28,4 +28,4 @@
 [https://www.figma.com/file/bEzulctPPPMKjes3fuO3kU/HoshiME?node-id=0%3A1](https://www.figma.com/file/bEzulctPPPMKjes3fuO3kU/HoshiME?node-id=0%3A1)
 
 # ER図
-<img width="400" alt="スクリーンショット 2021-10-12 22 28 05" src="https://user-images.githubusercontent.com/76583053/137575991-65a8f8ec-89f4-4420-9d2d-f279cfce2686.png">
+<img width="555" alt="hoshime_erd" src="https://user-images.githubusercontent.com/76583053/147761791-8d12b707-d2fa-4e65-9463-87e5c5bbc570.png">
