@@ -15,7 +15,7 @@ class ItemsController < ApplicationController
     authorize(Item)
     @item = current_user.items.build(item_params)
     if @item.save
-      @item.calculation
+      @item.calculate
       redirect_to calculations_path, success: t('.success')
     else
       flash.now[:danger] = t('.fail')
@@ -27,7 +27,7 @@ class ItemsController < ApplicationController
 
   def update
     if @item.update(item_params)
-      @item.calculation
+      @item.calculate
       redirect_to calculations_path, success: t('.success')
     else
       flash.now[:danger] = t('.fail')
