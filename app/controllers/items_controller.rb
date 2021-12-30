@@ -2,17 +2,20 @@ class ItemsController < ApplicationController
   before_action :get_item, only: %i[edit update destroy]
 
   def index
+    authorize(Item)
     @items = current_user.items
   end
 
   def new
-    @item = Item.new
+    authorize(Item)
+    @item = current_user.items.build
   end
 
   def create
-    @item = current_user.items.new(item_params)
+    authorize(Item)
+    @item = current_user.items.build(item_params)
     if @item.save
-      @item.calculation
+      @item.calculate
       redirect_to calculations_path, success: t('.success')
     else
       flash.now[:danger] = t('.fail')
@@ -24,7 +27,7 @@ class ItemsController < ApplicationController
 
   def update
     if @item.update(item_params)
-      @item.calculation
+      @item.calculate
       redirect_to calculations_path, success: t('.success')
     else
       flash.now[:danger] = t('.fail')
@@ -37,14 +40,11 @@ class ItemsController < ApplicationController
     redirect_to items_path, success: t('.success')
   end
 
-  def confirm
-    @items = Item.all.order(created_at: :asc)
-  end
-
   private
 
   def get_item
     @item = Item.find(params[:id])
+    authorize(@item)
   end
 
   def item_params

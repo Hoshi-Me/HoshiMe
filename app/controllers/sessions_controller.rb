@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  skip_before_action :require_login
   before_action :reject_user, only: %i[create]
 
   def new; end
@@ -14,6 +15,8 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    authorize(User, policy_class: SessionPolicy)
+
     logout
     redirect_to root_path, success: t('.success')
   end
