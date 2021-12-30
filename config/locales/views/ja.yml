@@ -6,6 +6,8 @@ ja:
     mypage: マイページ
     submit: 送信
   items:
+    index:
+      title: 欲しいものリスト
     new:
       title: アイテム登録
     create:
@@ -24,6 +26,11 @@ ja:
     create:
       success: アイテムを3つ登録しました
       fail: 欲しいものの名前を入力してください
+  calculations:
+    index:
+      title: ランキング
+    show:
+      title: ランキング詳細
   users:
     new:
       title: 新規登録
