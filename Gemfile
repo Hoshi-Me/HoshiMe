@@ -28,6 +28,9 @@ gem 'sorcery'
 gem 'rails-i18n'
 # アクション権限
 gem 'pundit'
+# 管理者ページ
+gem 'rails_admin', '~> 2.0'
+gem 'rails_admin-i18n'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
