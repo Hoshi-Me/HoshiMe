@@ -77,5 +77,6 @@
   #### フロントエンド
   HTML
   CSS(SCSS)
+  Tailwind CSS
   JavaScript(jQuery)
-  Tailwind
+  Chart.js
