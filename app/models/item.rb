@@ -21,7 +21,7 @@ class Item < ApplicationRecord
 
   def calculate_degree(data)
     case data
-    when 1..20
+    when 0..20
       degree_value = 2
     when 21..40
       degree_value = 4
@@ -37,7 +37,7 @@ class Item < ApplicationRecord
 
   def calculate_start(data)
     case data
-    when 1..30
+    when 0..30
       start_value = 2
     when 31..90
       start_value = 4
@@ -53,7 +53,7 @@ class Item < ApplicationRecord
 
   def calculate_finish(data)
     case data
-    when 1..30
+    when 0..30
       finish_value = 10
     when 31..90
       finish_value = 8
