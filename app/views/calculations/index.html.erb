@@ -25,6 +25,13 @@
           </div>
         </div>
       </div>
+      <div class="flex justify-center pb-3">
+        <div class='bg-twitter-400 text-white text-md lg:text-xl rounded-full h-8 2xl:h-10 w-32 2xl:w-40 flex items-center justify-center shadow-xl'>
+          <%= link_to "https://twitter.com/intent/tweet?&text=あなたが今一番欲しいものは【#{@calculations.first.item.name}】です。%0aお金があるなら今すぐ買いましょう！&url=https://hoshime.herokuapp.com%0a&hashtags=HoshiMe,ランキング,お金,無駄遣い&lang=ja", title: 'Twitter', target: :_blank, rel: 'noopener noreferrer'  do %>
+            <span><i class="fab fa-twitter text-lg lg:text-2xl pt-1"></i>シェアする</span>
+          <% end %>
+        </div>
+      </div>
     </section>
     <div class="hidden lg:block bg-white shadow-lg pl-5 h-screen w-full overflow-hidden">
       <p class="text-center text-md lg:text-xl underline pt-5">上位３件の計算データ</p>

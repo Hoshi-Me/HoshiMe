@@ -9,6 +9,19 @@
     <%= Gon::Base.render_data %>
     <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <%= favicon_pack_tag 'favicon.png' %>
+    <%= display_meta_tags(default_meta_tags) %>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-B53E770NFW"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-B53E770NFW');
+    </script>
   </head>
 
   <body class="flex flex-col min-h-screen bg-yellow-50">
