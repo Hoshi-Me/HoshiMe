@@ -1,6 +1,6 @@
 <div class="flex justify-center">
   <div class="px-4 2xl:pt-10">
-    <div class="flex justify-center pb-4 pt-6 lg:pt-3">
+    <div class="flex justify-center pt-0 lg:pt-3">
       <%= image_pack_tag "top_title.png", size: "300x300" %>
     </div>
     <p class="text-gray-600 text-md lg:text-lg text-center">
@@ -22,7 +22,7 @@
         <%= button_to "欲しいものリストへ", items_path, method: :get, class: "text-white bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-500 hover:bg-gradient-to-br focus:ring-4 focus:ring-yellow-300 dark:focus:ring-yellow-800 font-medium rounded-lg text-md 2xl:text-lg px-7 2xl:px-10 py-2.5 text-center mr-2 mb-2 2xl:my-5" %>
       </div>
       <div class="flex justify-center">
-        <%= button_to "欲しいものを追加する", new_item_path, method: :get, class: "text-white bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-500 hover:bg-gradient-to-br focus:ring-4 focus:ring-yellow-300 dark:focus:ring-yellow-800 font-medium rounded-lg text-md 2xl:text-lg px-5 2xl:px-10 py-2.5 text-center mr-2 mb-2 2xl:my-5" %>
+        <%= button_to t('items.new.add_item'), new_item_path, method: :get, class: "text-white bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-500 hover:bg-gradient-to-br focus:ring-4 focus:ring-yellow-300 dark:focus:ring-yellow-800 font-medium rounded-lg text-md 2xl:text-lg px-5 2xl:px-10 py-2.5 text-center mr-2 mb-2 2xl:my-5" %>
       </div>
     <% end %>
   </div>

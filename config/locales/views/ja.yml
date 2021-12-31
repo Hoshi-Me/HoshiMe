@@ -4,10 +4,15 @@ ja:
     register: 新規登録
     logout: ログアウト
     mypage: マイページ
-    submit: 送信
+    submit: 送信する
+    update: 更新する
   items:
+    index:
+      title: 欲しいものリスト
+      to_rank: ランキングを見る
     new:
       title: アイテム登録
+      add_item: 欲しいものを追加する
     create:
       success: アイテムを登録しました
       fail: アイテムの登録に失敗しました
@@ -24,6 +29,15 @@ ja:
     create:
       success: アイテムを3つ登録しました
       fail: 欲しいものの名前を入力してください
+  calculations:
+    index:
+      title: ランキング
+      rank: 順位
+      item: 欲しいもの
+      no_account: アカウント登録はこちら
+    show:
+      title: ランキング詳細
+      close: 閉じる
   users:
     new:
       title: 新規登録
@@ -35,15 +49,20 @@ ja:
   sessions:
     new:
       title: ログイン
+      forget_password: パスワードを忘れた方はこちら
+      twitter_login: Twitterでログイン
     create:
       success: ログインしました
       fail: ログインに失敗しました
       danger: 退会したユーザーです
     destroy:
+      title: ログアウト
       success: ログアウトしました
   profiles:
     show:
       title: マイページ
+      update: 編集
+      destroy: 退会
     edit:
       title: プロフィール更新
     update:
@@ -68,3 +87,6 @@ ja:
       success: メールを送信しました
     update:
       success: パスワードを変更しました
+  header:
+    add_item: 欲しいもの追加
+    

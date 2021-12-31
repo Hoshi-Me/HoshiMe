@@ -1,8 +1,10 @@
+<% content_for(:title, t('.title')) %>
+
 <div class="flex items-center min-h-screen">
   <div class="container mx-auto">
     <div class="max-w-md mx-auto">
       <div class="text-center">
-        <h1 class="text-3xl font-semibold text-gray-700 dark:text-gray-200">新規登録</h1>
+        <h1 class="text-3xl font-semibold text-gray-700 dark:text-gray-200"><%= t('.title') %></h1>
       </div>
       <div class="m-7">
         <%= form_with model: @user, local: true do |f| %>
@@ -28,12 +30,12 @@
             <p class= "text-sm text-gray-400">例：12345abcdef</p>
           </div>
           <div class="mb-6">
-            <%= f.submit class: "w-full p-2 lg:p-2 text-white text-lg lg:text-xl bg-yellow-500 rounded-md focus:bg-yellow-600 focus:outline-none" %>
+            <%= f.submit class: "cursor-pointer w-full p-2 lg:p-2 text-white text-lg lg:text-xl bg-yellow-500 rounded-md focus:bg-yellow-600 focus:outline-none" %>
           </div>
         <% end %>
         <div class="flex justify-center border-t border-gray-300">
           <%= link_to auth_at_provider_path( provider: :twitter ), class: "text-white bg-twitter-400 hover:bg-twitter-600 focus:ring-4 focus:ring-twitter-100 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#1da1f2]/55 mr-2 mb-2 mt-5" do %>
-            <span><i class="fab fa-twitter"></i>Twitterでログイン</span>
+            <span><i class="fab fa-twitter"></i><%= t('sessions.new.twitter_login') %></span>
           <% end %>
         </div>
       </div>
