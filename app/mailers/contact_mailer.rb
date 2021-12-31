@@ -7,7 +7,7 @@ class ContactMailer < ApplicationMailer
   #
   def contact_us_email(contact)
     @contact = contact
-    mail(to: 'example@example.com',
+    mail(to: Rails.application.credentials.gmail[:user_name],
          subject: 'HoshiMeへのお問い合わせ')
   end
 end
