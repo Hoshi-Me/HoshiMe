@@ -1,7 +1,7 @@
 <% content_for(:title, t('.title')) %>
 
 <section class="antialiased bg-yellow-50 text-gray-600 h-screen">
-  <h1 class="flex justify-center py-8 text-xl lg:text-4xl font-semibold">欲しいものリスト一覧</h1>
+  <h1 class="flex justify-center py-8 text-xl lg:text-4xl font-semibold"><%= t('.title') %></h1>
   <div class="flex flex-col justify-center">
     <!-- Table -->
     <div class="w-11/12 lg:w-5/6 mx-auto bg-white shadow-lg rounded-sm border border-gray-200">
@@ -11,19 +11,19 @@
             <thead class="text-xs lg:text-lg font-semibold uppercase text-gray-400 bg-gray-50">
               <tr>
                 <th class="p-2 whitespace-nowrap">
-                    <div class="font-semibold text-left">欲しいもの</div>
+                    <div class="font-semibold text-left"><%= Item.human_attribute_name(:name) %></div>
                 </th>
                 <th class="p-2 whitespace-nowrap">
-                    <div class="font-semibold text-center">欲しい度</div>
+                    <div class="font-semibold text-center"><%= Item.human_attribute_name(:degree) %></div>
                 </th>
                 <th class="p-2 whitespace-nowrap">
-                    <div class="font-semibold text-center">いつから欲しい？</div>
+                    <div class="font-semibold text-center"><%= Item.human_attribute_name(:start_date) %></div>
                 </th>
                 <th class="p-2 whitespace-nowrap">
-                    <div class="font-semibold text-center">いつまでに欲しい？</div>
+                    <div class="font-semibold text-center"><%= Item.human_attribute_name(:finish_date) %></div>
                 </th>
                 <th class="p-2 whitespace-nowrap">
-                    <div class="font-semibold text-center">値段</div>
+                    <div class="font-semibold text-center"><%= Item.human_attribute_name(:price) %></div>
                 </th>
                 <th class="p-2 whitespace-nowrap"></th>
                 <th class="p-2 whitespace-nowrap"></th>
@@ -41,10 +41,10 @@
   <div class="mt-5 2xl:mt-10">
     <div class="flex justify-center grid grid-col-1">
       <div class="flex justify-center">
-        <%= button_to "欲しいものを追加する", new_item_path, method: :get, class: "cursor-pointer font-semibold text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-md 2xl:text-lg px-5 py-2.5 text-center mr-2 mb-2" %>
+        <%= button_to t('items.new.add_item'), new_item_path, method: :get, class: "cursor-pointer font-semibold text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-md 2xl:text-lg px-5 py-2.5 text-center mr-2 mb-2" %>
       </div>
       <div class="flex justify-center">
-        <%= button_to "ランキングを見る", calculations_path, method: :get, class: "cursor-pointer font-semibold text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-md 2xl:text-lg px-9 py-2.5 text-center mr-2 mb-2" %>
+        <%= button_to t('.to_rank'), calculations_path, method: :get, class: "cursor-pointer font-semibold text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-md 2xl:text-lg px-9 py-2.5 text-center mr-2 mb-2" %>
       </div>
     </div>
   </div>

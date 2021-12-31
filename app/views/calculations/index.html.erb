@@ -13,10 +13,10 @@
               <thead class="bg-yellow-200">
                 <tr>
                   <th scope="col" class="py-3 px-6 text-xs lg:text-xl font-medium tracking-wider text-gray-700 dark:text-gray-400">
-                      順位
+                      <%= t('.rank') %>
                   </th>
                   <th scope="col" class="py-3 px-6 text-xs lg:text-xl font-medium tracking-wider text-gray-700 dark:text-gray-400">
-                      欲しいもの
+                      <%= t('.item') %>
                   </th>
                 </tr>
               </thead>
@@ -46,12 +46,12 @@
     <% if current_user.guest? %>
       <p class="text-center text-md lg:text-xl">ユーザー登録すると今登録したアイテムを引き継いで使うことができます。</p>
       <div class="flex justify-center py-7">
-        <%= button_to "アカウント登録はこちら", new_user_path, method: :get, class: "text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2" %>
+        <%= button_to t('.no_account'), new_user_path, method: :get, class: "text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2" %>
       </div>
     <% else %>
       <p class="text-center text-md lg:text-xl">他に追加したいものはありませんか？</p></p>
       <div class="flex justify-center py-7">
-        <%= button_to "欲しいものを追加する", new_item_path, method: :get, class: "text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2" %>
+        <%= button_to t('items.new.add_item'), new_item_path, method: :get, class: "text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2" %>
       </div>
     <% end %>
   </div>
@@ -61,7 +61,7 @@
   </div>
   <p class="text-center text-md lg:text-2xl pt-5">欲しいものを追加しましょう！</p></p>
   <div class="flex justify-center py-7">
-    <%= button_to "欲しいものを追加する", new_item_path, method: :get, class: "text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2" %>
+    <%= button_to t('items.new.add_item'), new_item_path, method: :get, class: "text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2" %>
   </div>
 <% end %>
 
