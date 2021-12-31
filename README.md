@@ -26,12 +26,12 @@
 
   <br>
 
-  ## 🌼主なページ内容
+  ## 主なページ内容
 
   |  トップページ  |  欲しいもの登録ページ |
   | ---- | ---- |
   |  <img width="1280" alt="top" src="https://user-images.githubusercontent.com/76583053/147766544-0931de4d-53a7-468d-88c3-5dc822617a42.png">  |  <img width="1280" alt="three_items" src="https://user-images.githubusercontent.com/76583053/147766601-ca4ff008-4095-4ded-a01c-9dc9312e3119.png">  |
-  |  ユーザー登録をする必要はありません。気軽にアプリを使っていただけます。 |  欲しいものを一気に3つ登録できるようにしました。入力作業を減らすためにrange入力を導入しています。  |
+  |  最初はユーザー登録せずに気軽にアプリを使っていただけます。 |  欲しいものを一気に3つ登録できるようにしました。入力作業を減らすためにrange入力を導入しています。  |
 
 
 
@@ -57,11 +57,6 @@
 
   ### ER図
   <img width="555" alt="hoshime_erd" src="https://user-images.githubusercontent.com/76583053/147761791-8d12b707-d2fa-4e65-9463-87e5c5bbc570.png">
-
-  <br>
-
-  ### 画面遷移図
-  [https://www.figma.com/file/bEzulctPPPMKjes3fuO3kU/HoshiME?node-id=0%3A1](https://www.figma.com/file/bEzulctPPPMKjes3fuO3kU/HoshiME?node-id=0%3A1)
 
   <br>
 
