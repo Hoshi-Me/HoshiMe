@@ -42,8 +42,8 @@ ja:
     new:
       title: 新規登録
     create:
-      success: ユーザを登録しました
-      fail: ユーザの登録に失敗しました
+      success: ユーザーを登録しました
+      fail: ユーザーの登録に失敗しました
     destroy:
       success: 退会しました
   sessions:
