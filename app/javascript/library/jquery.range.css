@@ -24,9 +24,10 @@
 }
 .slider-container .back-bar .pointer-label {
   position: absolute;
-  top: -17px;
-  font-size: 8px;
-  background: white;
+  top: -30px;
+  left: 40px;
+  font-size: 15px;
+  background: rgba(255, 251, 235, var(--tw-bg-opacity));
   white-space: nowrap;
   line-height: 1;
 }
